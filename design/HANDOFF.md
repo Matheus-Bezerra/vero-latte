@@ -152,7 +152,7 @@ Todas usam `transform`, `opacity` ou `clip-path`, com um único loop `requestAni
 | Botões | Ícone de picolé que inclina −14° no hover. Escala 0,97 ao pressionar. | |
 | **Vitrine de produtos** | Hover (só com mouse), clique ou teclado na lista trocam a foto em arco. A nova foto entra com `clip-path: inset(100% 0 0 0 → 0)` e `scale(1,08 → 1)`. A descrição do item abre por `grid-template-rows: 0fr → 1fr`. O nome desliza 0,6 rem. | Botões com `aria-expanded`. A legenda da foto usa `aria-live`. |
 | Produtos no celular | Carrossel horizontal com `scroll-snap`, cards de 78% de largura e indicadores em forma de picolé. | |
-| Ingredientes | Parallax suave em 6 fotos, com velocidades entre −0,06 e 0,07. Zoom de 1,05 no hover. | Desligado com movimento reduzido. |
+| Ingredientes | Desktop: texto fixo à esquerda (palco `sticky` de 100 svh, trilho de 100 svh + 70 svh por foto). À direita, pilha de 6 cartas: a do topo sai com `clip-path` e `opacity`, a próxima assume. Legenda e contador `01 / 06` com `aria-live`. Celular e movimento reduzido: sem travar a rolagem, grade escalonada e irregular com entrada suave. Zoom de 1,05 no hover. | O progresso vira `--t` (0 a n−1) e o CSS calcula cada carta com `calc()`. Sem movimento: grade estática. |
 | **Manifesto** | Palco `sticky` com altura de (nº de versos + 2) × 26 vh. Cada verso passa de 20% para 100% de opacidade de cor conforme o progresso. A frase final acende por último em marrom. Barra de progresso vertical à direita. | |
 | Eventos | Linha do tempo de 4 passos (a sequência real do serviço). A linha dourada se preenche conforme a seção entra na tela. | `--sp` calculado no loop. |
 | Lojas | Zoom de 1,04 na foto no hover. | |

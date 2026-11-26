@@ -65,8 +65,6 @@ export type Product = {
 export type GalleryItem = {
   photo: Photo;
   caption: string;
-  /** Velocidade do parallax (de -0,06 a 0,07). */
-  speed: number;
   /** object-position opcional para enquadrar a foto. */
   position?: string;
 };

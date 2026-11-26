@@ -3,6 +3,7 @@ import type { GalleryItem } from "./types";
 
 export const ingredients = {
   kicker: "Ingredientes selecionados",
+  galleryLabel: "Fotos de ingredientes e receitas da Vero Latte",
   title: "O cuidado começa antes do palito",
   text: "Cacau escolhido entre as melhores regiões do mundo. Frutas frescas e da estação, de produtores locais. E cada receita feita de forma artesanal.",
   list: [
@@ -18,12 +19,10 @@ export const gallery: GalleryItem[] = [
   {
     photo: { src: chocolateImg, alt: "Chocolate derretido escorrendo sobre gelatos no palito" },
     caption: "Cobertura de chocolate",
-    speed: -0.06,
   },
   {
     photo: { src: mangaImg, alt: "Sorbet de manga em bolas, ao lado de fatias da fruta" },
     caption: "Sorbet de manga",
-    speed: 0.05,
   },
   {
     photo: {
@@ -31,7 +30,6 @@ export const gallery: GalleryItem[] = [
       alt: "Duas mãos servem um palito de chocolate com granulado e outro listrado, ao lado de uma xícara de café",
     },
     caption: "Café ou gelato no palito",
-    speed: -0.03,
   },
   {
     photo: {
@@ -39,13 +37,11 @@ export const gallery: GalleryItem[] = [
       alt: "Fatia de cheesecake com calda de goiabada e um gelato no palito por cima",
     },
     caption: "Cheesecake com goiabada",
-    speed: 0.07,
     position: "50% 72%",
   },
   {
     photo: { src: pistacheImg, alt: "Gelatos de pistache empilhados com pistaches" },
     caption: "Pistache",
-    speed: -0.05,
   },
   {
     photo: {
@@ -53,6 +49,5 @@ export const gallery: GalleryItem[] = [
       alt: "Copo de papel da Vero Latte com affogato e marshmallows, sobre uma base rosa",
     },
     caption: "Affogato Vero Latte",
-    speed: 0.04,
   },
 ];
