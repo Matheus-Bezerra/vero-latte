@@ -5,6 +5,9 @@ import { Products } from "@/components/Products";
 import { Ingredients } from "@/components/Ingredients";
 import { Manifesto } from "@/components/Manifesto";
 import { FounderStory } from "@/components/FounderStory";
+import { Events } from "@/components/Events";
+import { Stores } from "@/components/Stores";
+import { News } from "@/components/News";
 
 export default function Home() {
   return (
@@ -16,6 +19,9 @@ export default function Home() {
         <Ingredients />
         <Manifesto />
         <FounderStory />
+        <Events />
+        <Stores />
+        <News />
       </main>
       <MobileActionBar />
     </>
