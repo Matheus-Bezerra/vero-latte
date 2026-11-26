@@ -1,0 +1,19 @@
+// Imports estáticos de public/img/. Origem de cada arquivo em public/img/CREDITS.md.
+export { default as logo } from "../../public/img/logo.png";
+export { default as heroImg } from "../../public/img/hero-palito-goiabada.jpg";
+export { default as palitoImg } from "../../public/img/produto-palito-brigadeiro.jpg";
+export { default as bombomImg } from "../../public/img/produto-bombom.jpg";
+export { default as granImg } from "../../public/img/produto-gran-gelato.jpg";
+export { default as massaImg } from "../../public/img/produto-massa-pistache.jpg";
+export { default as presenteImg } from "../../public/img/produto-caixa-presente.jpg";
+export { default as chocolateImg } from "../../public/img/ingrediente-cobertura-chocolate.jpg";
+export { default as mangaImg } from "../../public/img/ingrediente-sorbet-manga.jpg";
+export { default as pistacheImg } from "../../public/img/ingrediente-pistache.jpg";
+export { default as cafeImg } from "../../public/img/pinterest-cafe-ou-gelato.jpg";
+export { default as cheesecakeImg } from "../../public/img/pinterest-cheesecake-goiabada.jpg";
+export { default as affogatoImg } from "../../public/img/pinterest-affogato.jpg";
+export { default as marianaImg } from "../../public/img/historia-mariana-galvao.jpg";
+export { default as carrinhoImg } from "../../public/img/eventos-carrinho.jpg";
+export { default as bandejaImg } from "../../public/img/eventos-bandeja-gelo-seco.jpg";
+export { default as campoBeloImg } from "../../public/img/loja-campo-belo.jpg";
+export { default as cidadeJardimImg } from "../../public/img/loja-cidade-jardim.jpg";

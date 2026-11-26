@@ -1,9 +1,10 @@
 import Image from "next/image";
-import logo from "../../public/img/logo.png";
+import { logo } from "@/data/images";
 import { footer, site } from "@/data/site";
 import { headquarters, phoneMain, policies, socials, whatsappMain } from "@/data/contacts";
 import { ExternalLink } from "./ui/ExternalLink";
 import { SocialIcon } from "./ui/SocialIcon";
+import { PopsiclePattern } from "./ui/PopsiclePattern";
 
 export function Footer() {
   return (
@@ -65,7 +66,7 @@ export function Footer() {
         </span>
         <span>{footer.credit}</span>
       </div>
-      <div className="pattern foot-strip" aria-hidden="true" />
+      <PopsiclePattern className="foot-strip" />
     </footer>
   );
 }

@@ -1,3 +1,5 @@
+import type { StaticImageData } from "next/image";
+
 /** Tipos do conteúdo da home. Todo texto e link do site vive em src/data/. */
 
 export type Link = {
@@ -7,12 +9,10 @@ export type Link = {
   external?: boolean;
 };
 
+/** Import estático de public/img/: o next/image recebe largura e altura sem esforço extra. */
 export type Photo = {
-  /** Caminho em public/ (ex.: /img/hero-palito-goiabada.jpg). */
-  src: string;
+  src: StaticImageData;
   alt: string;
-  width: number;
-  height: number;
 };
 
 export type NavItem = {
