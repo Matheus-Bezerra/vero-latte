@@ -355,6 +355,189 @@
     background: linear-gradient(var(--color-gold), transparent);
     animation: drip 1.8s var(--ease-vero) infinite;
   }
+  /* =========================================================
+     2. PRODUTOS: índice + vitrine
+     ========================================================= */
+  .products-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: start;
+  }
+  .p-index {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid color-mix(in srgb, var(--color-choc) 18%, transparent);
+  }
+  .p-item {
+    border-bottom: 1px solid color-mix(in srgb, var(--color-choc) 18%, transparent);
+  }
+  .p-item button {
+    all: unset;
+    box-sizing: border-box;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.15rem 0;
+    cursor: pointer;
+  }
+  .p-item button:focus-visible {
+    outline: 2px solid var(--color-choc);
+    outline-offset: 4px;
+  }
+  .p-name {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 1.1rem + 1.4vw, 2.35rem);
+    color: var(--color-stone);
+    transition:
+      color 0.35s var(--ease-vero),
+      transform 0.45s var(--ease-vero);
+    transform-origin: left;
+  }
+  .p-item.active .p-name,
+  .p-item button:hover .p-name {
+    color: var(--color-cacau);
+  }
+  .p-item.active .p-name {
+    transform: translateX(0.6rem);
+  }
+  .p-dot {
+    width: 12px;
+    height: 28px;
+    border-radius: 6px 6px 3px 3px;
+    border: 1.5px solid var(--color-gold);
+    transition: background 0.35s;
+  }
+  .p-item.active .p-dot {
+    background: var(--color-gold);
+  }
+  .p-body {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.5s var(--ease-vero);
+  }
+  .p-item.active .p-body {
+    grid-template-rows: 1fr;
+  }
+  .p-body > div {
+    overflow: hidden;
+  }
+  .p-body p {
+    padding: 0 0 0.5rem 0.6rem;
+    color: var(--color-stone);
+    max-width: 44ch;
+  }
+  .p-body a {
+    display: inline-flex;
+    margin: 0.4rem 0 1.4rem 0.6rem;
+    font-weight: 600;
+    font-size: var(--text-sm);
+    color: var(--color-choc);
+    text-underline-offset: 4px;
+  }
+  .showcase {
+    position: sticky;
+    top: 110px;
+    aspect-ratio: 4 / 5;
+    border-radius: var(--radius-arch);
+    overflow: hidden;
+    background: var(--color-rose-50);
+  }
+  .showcase img {
+    object-fit: cover;
+    clip-path: inset(100% 0 0 0);
+    transform: scale(1.08);
+    transition:
+      clip-path 0.9s var(--ease-vero),
+      transform 1.4s var(--ease-vero);
+  }
+  .showcase img.on {
+    clip-path: inset(0 0 0 0);
+    transform: scale(1);
+    z-index: 2;
+  }
+  .showcase img.prev {
+    clip-path: inset(0 0 0 0);
+    z-index: 1;
+  }
+  .showcase-cap {
+    position: absolute;
+    z-index: 3;
+    left: 1rem;
+    bottom: 1rem;
+    background: color-mix(in srgb, var(--color-leite) 90%, transparent);
+    backdrop-filter: blur(8px);
+    padding: 0.45rem 0.9rem;
+    border-radius: var(--radius-pill);
+    font-size: var(--text-xs);
+    font-weight: 600;
+  }
+
+  /* carrossel mobile */
+  .p-rail,
+  .rail-dots {
+    display: none;
+  }
+  @media (max-width: 860px) {
+    .products-grid {
+      display: none;
+    }
+    .p-rail {
+      display: flex;
+      gap: 1rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding: 0 var(--spacing-gutter) 1rem;
+      margin: 0 calc(-1 * var(--spacing-gutter));
+      scrollbar-width: none;
+    }
+    .p-rail::-webkit-scrollbar {
+      display: none;
+    }
+    .p-card {
+      flex: 0 0 78%;
+      scroll-snap-align: center;
+      text-decoration: none;
+    }
+    .p-card .ph {
+      aspect-ratio: 4 / 5;
+      border-radius: var(--radius-arch);
+      overflow: hidden;
+      background: var(--color-rose-50);
+    }
+    .p-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .p-card h3 {
+      font-size: 1.6rem;
+      margin: 1rem 0 0.3rem;
+    }
+    .p-card p {
+      color: var(--color-stone);
+      font-size: var(--text-sm);
+    }
+    .rail-dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.4rem;
+      margin-top: 0.5rem;
+    }
+    .rail-dots span {
+      width: 7px;
+      height: 16px;
+      border-radius: 4px 4px 2px 2px;
+      border: 1.5px solid var(--color-gold);
+      transition: background 0.3s;
+    }
+    .rail-dots span.on {
+      background: var(--color-gold);
+    }
+  }
 }
 
 @keyframes logoIn {
