@@ -34,8 +34,8 @@ export function HeroBox() {
             alt={hero.photo.alt}
             fill
             sizes="100vw"
-            quality={75}
-            loading="eager"
+            quality={60}
+            preload
             fetchPriority="high"
           />
         </div>

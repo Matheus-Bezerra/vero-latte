@@ -27,8 +27,11 @@
     max-width: 100%;
     height: auto;
   }
+  /* o reset do Tailwind tira o sublinhado; links no texto voltam a ser sublinhados */
   a {
     color: inherit;
+    text-decoration-line: underline;
+    text-underline-offset: 3px;
   }
   h1,
   h2,

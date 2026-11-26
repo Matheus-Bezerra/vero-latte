@@ -37,7 +37,6 @@ export const metadata: Metadata = {
     type: "website",
     images: [{ url: "/img/logo.png", width: 338, height: 348, alt: site.logoAlt }],
   },
-  icons: { icon: "/img/logo.png" },
 };
 
 export const viewport: Viewport = {

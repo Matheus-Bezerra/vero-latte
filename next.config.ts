@@ -5,9 +5,9 @@ const nextConfig: NextConfig = {
   partialPrefetching: true,
   images: {
     formats: ["image/avif", "image/webp"],
-    deviceSizes: [640, 960, 1440, 1920],
+    deviceSizes: [640, 750, 960, 1080, 1440, 1920],
     imageSizes: [96, 160, 256, 384],
-    qualities: [75, 85],
+    qualities: [60, 75, 85],
   },
   turbopack: {
     rules: {

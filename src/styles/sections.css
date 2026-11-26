@@ -663,6 +663,8 @@
     transform: rotate(180deg);
     font-size: var(--text-lg);
     color: var(--color-choc);
+    /* choc sobre rose só passa AA como texto grande: 600 a partir de ~19 px */
+    font-weight: 600;
     letter-spacing: 0.06em;
     display: flex;
     align-items: center;
@@ -677,15 +679,17 @@
   }
   .man-text {
     font-family: var(--font-display);
-    font-size: clamp(1.35rem, 0.9rem + 2.3vw, 2.7rem);
+    /* mínimo de 24 px: conta como texto grande para o WCAG */
+    font-size: clamp(1.5rem, 0.9rem + 2.3vw, 2.7rem);
     line-height: 1.28;
   }
   .man-text .stanza {
     display: block;
     margin-bottom: 0.55em;
   }
+  /* versos ainda não lidos: 3:1 sobre o rosa (AA para texto grande) */
   .man-text .ln {
-    color: color-mix(in srgb, var(--color-cacau) 20%, transparent);
+    color: color-mix(in srgb, var(--color-cacau) 62%, var(--color-rose));
     transition: color 0.5s var(--ease-vero);
   }
   .man-text .ln.on {
@@ -695,7 +699,7 @@
     display: block;
     margin-top: 0.4em;
     font-size: 1.18em;
-    color: color-mix(in srgb, var(--color-choc) 22%, transparent);
+    color: color-mix(in srgb, var(--color-cacau) 62%, var(--color-rose));
     transition: color 0.6s;
   }
   .man-text .last.on {
@@ -725,6 +729,7 @@
       writing-mode: horizontal-tb;
       transform: none;
       font-size: var(--text-sm);
+      color: var(--color-cacau);
     }
     .man-side::after {
       width: 40px;
