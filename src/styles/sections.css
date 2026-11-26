@@ -219,7 +219,7 @@
   }
   .hero-photo img {
     object-fit: cover;
-    object-position: 50% 60%;
+    object-position: 50% 50%;
     transform: scale(calc(1.14 - 0.14 * var(--p, 0)));
     will-change: transform;
   }

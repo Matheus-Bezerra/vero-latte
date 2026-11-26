@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image, { getImageProps } from "next/image";
 import { useRef } from "react";
 import { hero } from "@/data/hero";
 import { logo } from "@/data/images";
@@ -23,21 +23,21 @@ export function HeroBox() {
     el.style.setProperty("--p", p.toFixed(4));
   });
 
+  const common = { fill: true, sizes: "100vw", quality: 90, preload: true, fetchPriority: "high" as const };
+  const { props: landscape } = getImageProps({ ...common, src: hero.photo.src, alt: hero.photo.alt });
+  const { props: portrait } = getImageProps({ ...common, src: hero.photoPortrait.src, alt: hero.photoPortrait.alt });
+
   const [primary, secondary] = hero.ctas;
 
   return (
     <section className="hero" id="inicio" aria-label={hero.sectionLabel} ref={ref}>
       <div className="hero-stage">
         <div className="hero-photo">
-          <Image
-            src={hero.photo.src}
-            alt={hero.photo.alt}
-            fill
-            sizes="100vw"
-            quality={60}
-            preload
-            fetchPriority="high"
-          />
+          <picture>
+            <source media="(max-aspect-ratio: 4/5)" srcSet={portrait.srcSet} sizes="100vw" />
+            {/* eslint-disable-next-line jsx-a11y/alt-text -- alt vem de hero.photo.alt */}
+            <img {...landscape} />
+          </picture>
         </div>
 
         <div className="hero-reveal on-dark">
