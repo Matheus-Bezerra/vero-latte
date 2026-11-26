@@ -1,0 +1,73 @@
+@import "tailwindcss";
+@import "../styles/base.css";
+@import "../styles/sections.css";
+
+/* =========================================================
+   TOKENS (design/HANDOFF.md, seções 5 e 6)
+   Única fonte de cores, tipos, espaços, raios e curva.
+   ========================================================= */
+@theme {
+  /* cores */
+  --color-*: initial;
+  --color-leite: #fbf5f1;
+  --color-rose-50: #f4e7e2;
+  --color-rose: #d0ada4;
+  --color-rose-box: #bf8a80;
+  --color-choc: #774d28;
+  --color-cacau: #3b2618;
+  --color-gold: #bfa760;
+  --color-gold-soft: #e3d4a6;
+  --color-stone: #68625a;
+  /* tons do padrão de picolés (public/pattern-picoles.svg) */
+  --color-gold-pattern: #d9c27e;
+  /* mensagem de erro do formulário (mesmo tom do protótipo) */
+  --color-erro: #9a2e1f;
+  --color-transparent: transparent;
+  --color-current: currentColor;
+
+  /* escala tipográfica fluida (razão ~1,25) */
+  --text-xs: 0.8125rem;
+  --text-sm: 0.9375rem;
+  --text-md: 1.0625rem;
+  --text-lg: clamp(1.2rem, 1.05rem + 0.6vw, 1.45rem);
+  --text-xl: clamp(1.6rem, 1.2rem + 1.6vw, 2.4rem);
+  --text-2xl: clamp(2.1rem, 1.4rem + 3vw, 3.9rem);
+  --text-3xl: clamp(2.6rem, 1.4rem + 5vw, 5.6rem);
+  --leading-body: 1.6;
+  --leading-title: 1.08;
+
+  /* espaçamento, base 8 */
+  --spacing-1: 0.5rem;
+  --spacing-2: 1rem;
+  --spacing-3: 1.5rem;
+  --spacing-4: 2rem;
+  --spacing-5: 3rem;
+  --spacing-6: 4rem;
+  --spacing-7: 6rem;
+  --spacing-8: 8rem;
+  --spacing-gutter: clamp(1.25rem, 4vw, 3.5rem);
+  --spacing-section: clamp(4.5rem, 10vw, 8.5rem);
+  --container-content: 1280px;
+
+  /* raios */
+  --radius-pill: 999px;
+  --radius-photo: 4px;
+  --radius-arch: 999px 999px 4px 4px;
+  --radius-card: 12px;
+  --radius-card-lg: 14px;
+
+  /* movimento */
+  --ease-vero: cubic-bezier(0.22, 0.8, 0.24, 1);
+
+  /* faixas do HANDOFF, seção 9 */
+  --breakpoint-*: initial;
+  --breakpoint-sm: 641px;
+  --breakpoint-md: 861px;
+  --breakpoint-nav: 981px;
+  --breakpoint-lg: 1021px;
+}
+
+@theme inline {
+  --font-display: var(--font-cinzel), "Trajan Pro", Georgia, serif;
+  --font-sans: var(--font-nunito), "Avenir Next", Avenir, system-ui, sans-serif;
+}

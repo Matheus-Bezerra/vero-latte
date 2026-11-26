@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vero Latte — apresentação do protótipo (desktop e mobile)</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{--leite:#FBF5F1;--rose:#D0ADA4;--choc:#774D28;--cacau:#3B2618;--gold:#BFA760;--stone:#68625A}
+  *{box-sizing:border-box}
+  body{margin:0;background:#E9DCD6;color:var(--cacau);font-family:"Nunito Sans",system-ui,sans-serif}
+  header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:1rem;padding:2rem 2.5rem 1.25rem}
+  h1{font-family:Cinzel,serif;font-weight:500;font-size:1.6rem;margin:0}
+  header p{margin:.35rem 0 0;color:var(--stone);font-size:.95rem;max-width:62ch}
+  .controls{display:flex;gap:.5rem;flex-wrap:wrap}
+  .controls a,.controls button{font:600 .875rem "Nunito Sans";padding:.6rem 1rem;border-radius:999px;border:1.5px solid var(--cacau);background:none;color:var(--cacau);text-decoration:none;cursor:pointer}
+  .controls a.primary{background:var(--choc);border-color:var(--choc);color:var(--leite)}
+  .stage{display:flex;gap:2.5rem;align-items:flex-start;justify-content:center;padding:0 2.5rem 3rem}
+  .frame-wrap{display:flex;flex-direction:column;gap:.6rem;align-items:center}
+  .frame-wrap span{font-size:.8rem;color:var(--stone);font-weight:600}
+  .desktop{width:min(1000px,62vw);aspect-ratio:1440/900;border-radius:12px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(59,38,24,.5);background:#fff;position:relative}
+  .desktop .bar{height:26px;background:#F4ECE8;display:flex;align-items:center;gap:6px;padding:0 10px}
+  .desktop .bar i{width:9px;height:9px;border-radius:50%;background:#D9C8C1}
+  .desktop iframe{width:1440px;height:calc(900px - 26px*1440/1000);border:0;transform-origin:0 0;transform:scale(var(--s,.694))}
+  .phone{width:390px;height:780px;border-radius:44px;padding:12px;background:var(--cacau);box-shadow:0 30px 60px -30px rgba(59,38,24,.6)}
+  .phone iframe{width:366px;height:756px;border:0;border-radius:34px;background:#fff}
+  @media (max-width:1100px){.stage{flex-direction:column;align-items:center}.desktop{width:92vw}}
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>Vero Latte Gelato · Home</h1>
+    <p>Protótipo de alta fidelidade, desktop e celular. Role dentro de cada tela para ver as animações. Redesign conceitual independente, sem vínculo ou aprovação da Vero Latte.</p>
+  </div>
+  <div class="controls">
+    <a class="primary" href="index.html" target="_blank">Abrir em tela cheia</a>
+    <button type="button" id="reload">Recarregar telas</button>
+  </div>
+</header>
+<div class="stage">
+  <div class="frame-wrap">
+    <div class="desktop" id="desk"><div class="bar"><i></i><i></i><i></i></div><iframe src="index.html" title="Protótipo desktop"></iframe></div>
+    <span>Desktop · 1440 px</span>
+  </div>
+  <div class="frame-wrap">
+    <div class="phone"><iframe src="index.html" title="Protótipo mobile"></iframe></div>
+    <span>Mobile · 366 px</span>
+  </div>
+</div>
+<script>
+  const desk = document.getElementById('desk');
+  const fit = () => desk.style.setProperty('--s', desk.clientWidth / 1440);
+  fit(); addEventListener('resize', fit);
+  document.getElementById('reload').onclick = () => document.querySelectorAll('iframe').forEach(f => f.src = f.src);
+</script>
+</body>
+</html>

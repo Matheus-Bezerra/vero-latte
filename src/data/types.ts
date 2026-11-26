@@ -1,0 +1,77 @@
+/** Tipos do conteúdo da home. Todo texto e link do site vive em src/data/. */
+
+export type Link = {
+  label: string;
+  href: string;
+  /** true abre em nova aba com rel="noopener noreferrer". */
+  external?: boolean;
+};
+
+export type Photo = {
+  /** Caminho em public/ (ex.: /img/hero-palito-goiabada.jpg). */
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+};
+
+export type NavItem = {
+  id: string;
+  label: string;
+};
+
+export type SocialNetwork = "instagram" | "youtube" | "facebook" | "pinterest";
+
+export type Social = {
+  network: SocialNetwork;
+  label: string;
+  href: string;
+};
+
+export type ContactLine = {
+  label: string;
+  value: string;
+};
+
+export type Store = {
+  id: string;
+  name: string;
+  tag: string;
+  photo: Photo;
+  address: string;
+  /** Linhas do bloco "Telefone" ou "WhatsApp". */
+  phone: { label: string; lines: string[] };
+  actions: (Link & { variant: "choc" | "line" })[];
+};
+
+export type DeliveryApp = {
+  name: string;
+  units: string;
+  href: string;
+};
+
+export type Product = {
+  id: string;
+  name: string;
+  description: string;
+  /** Texto curto usado no carrossel mobile. */
+  short: string;
+  link: Link;
+  photo: Photo;
+  /** Legenda da foto na vitrine (aria-live). */
+  caption: string;
+};
+
+export type GalleryItem = {
+  photo: Photo;
+  caption: string;
+  /** Velocidade do parallax (de -0,06 a 0,07). */
+  speed: number;
+  /** object-position opcional para enquadrar a foto. */
+  position?: string;
+};
+
+export type EventStep = {
+  title: string;
+  text: string;
+};
