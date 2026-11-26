@@ -538,6 +538,284 @@
       background: var(--color-gold);
     }
   }
+  /* =========================================================
+     3. INGREDIENTES
+     ========================================================= */
+  .ingr {
+    background: var(--color-rose-50);
+    overflow: hidden;
+  }
+  .ingr-grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: clamp(1rem, 2vw, 1.75rem);
+    align-items: start;
+  }
+  .ingr-text {
+    grid-column: 1 / span 5;
+    position: sticky;
+    top: 120px;
+  }
+  .ingr-text h2 {
+    font-size: var(--text-2xl);
+    margin: 1rem 0 1.5rem;
+  }
+  .ingr-text p {
+    color: var(--color-stone);
+    max-width: 42ch;
+    margin-bottom: 1rem;
+  }
+  .ingr-list {
+    margin: 2rem 0 0;
+    display: grid;
+    gap: 0.9rem;
+  }
+  .ingr-list > div {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.9rem;
+    align-items: baseline;
+  }
+  .ingr-list dt {
+    font-family: var(--font-display);
+    font-weight: 500;
+    color: var(--color-choc);
+    font-size: 1.15rem;
+  }
+  .ingr-list dd {
+    margin: 0;
+  }
+  .ingr-photos {
+    grid-column: 7 / span 6;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(1rem, 2vw, 1.5rem);
+  }
+  .ingr-photos figure {
+    margin: 0;
+    will-change: transform;
+  }
+  .ingr-photos figure:nth-child(even) {
+    margin-top: clamp(3rem, 10vw, 9rem);
+  }
+  .ingr-photos .ph {
+    aspect-ratio: 3 / 4;
+    border-radius: var(--radius-photo);
+    overflow: hidden;
+  }
+  .ingr-photos figure:nth-child(1) .ph {
+    border-radius: var(--radius-arch);
+  }
+  .ingr-photos img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s var(--ease-vero);
+  }
+  .ingr-photos figure:hover img {
+    transform: scale(1.05);
+  }
+  .ingr-photos figcaption {
+    font-size: var(--text-xs);
+    color: var(--color-stone);
+    margin-top: 0.6rem;
+  }
+  @media (max-width: 860px) {
+    .ingr-text,
+    .ingr-photos {
+      grid-column: 1 / -1;
+      position: static;
+    }
+    .ingr-photos {
+      margin-top: 1.5rem;
+    }
+  }
+
+  /* =========================================================
+     4. MANIFESTO
+     ========================================================= */
+  .manifesto {
+    position: relative;
+    background: var(--color-rose);
+    color: var(--color-cacau);
+  }
+  .man-track {
+    height: calc(var(--lines, 18) * 26vh);
+  }
+  .man-stage {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    height: 100svh;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+  }
+  .man-inner {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: clamp(1.5rem, 6vw, 6rem);
+    align-items: center;
+    width: min(100% - 2 * var(--spacing-gutter), 1100px);
+  }
+  .man-side {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: var(--text-lg);
+    color: var(--color-choc);
+    letter-spacing: 0.06em;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .man-side::after {
+    content: "";
+    width: 1.5px;
+    height: 80px;
+    background: var(--color-choc);
+    opacity: 0.5;
+  }
+  .man-text {
+    font-family: var(--font-display);
+    font-size: clamp(1.35rem, 0.9rem + 2.3vw, 2.7rem);
+    line-height: 1.28;
+  }
+  .man-text .stanza {
+    display: block;
+    margin-bottom: 0.55em;
+  }
+  .man-text .ln {
+    color: color-mix(in srgb, var(--color-cacau) 20%, transparent);
+    transition: color 0.5s var(--ease-vero);
+  }
+  .man-text .ln.on {
+    color: var(--color-cacau);
+  }
+  .man-text .last {
+    display: block;
+    margin-top: 0.4em;
+    font-size: 1.18em;
+    color: color-mix(in srgb, var(--color-choc) 22%, transparent);
+    transition: color 0.6s;
+  }
+  .man-text .last.on {
+    color: var(--color-choc);
+  }
+  .man-progress {
+    position: absolute;
+    right: var(--spacing-gutter);
+    bottom: 2rem;
+    width: 2px;
+    height: 90px;
+    background: color-mix(in srgb, var(--color-cacau) 15%, transparent);
+  }
+  .man-progress i {
+    display: block;
+    width: 100%;
+    height: 100%;
+    transform: scaleY(var(--mp, 0));
+    transform-origin: top;
+    background: var(--color-cacau);
+  }
+  @media (max-width: 640px) {
+    .man-inner {
+      grid-template-columns: 1fr;
+    }
+    .man-side {
+      writing-mode: horizontal-tb;
+      transform: none;
+      font-size: var(--text-sm);
+    }
+    .man-side::after {
+      width: 40px;
+      height: 1.5px;
+    }
+  }
+
+  /* =========================================================
+     5. HISTÓRIA
+     ========================================================= */
+  .story-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    gap: clamp(2rem, 6vw, 6rem);
+    align-items: center;
+  }
+  .story-photo {
+    position: relative;
+    margin: 0;
+    isolation: isolate;
+  }
+  .story-photo .ph {
+    aspect-ratio: 4 / 5;
+    border-radius: var(--radius-arch);
+    overflow: hidden;
+  }
+  .story-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 20%;
+  }
+  .story-photo::before {
+    content: "";
+    position: absolute;
+    inset: -14px 14px 14px -14px;
+    border: 1.5px solid var(--color-gold);
+    border-radius: var(--radius-arch);
+    z-index: -1;
+  }
+  .story-photo figcaption {
+    margin-top: 1rem;
+    font-size: var(--text-sm);
+    color: var(--color-stone);
+  }
+  .story-photo figcaption b {
+    display: block;
+    font-family: var(--font-display);
+    font-weight: 500;
+    color: var(--color-cacau);
+    font-size: 1.15rem;
+  }
+  .story h2 {
+    font-size: var(--text-2xl);
+    margin: 1rem 0 1.5rem;
+  }
+  .story p {
+    color: var(--color-stone);
+    max-width: 54ch;
+    margin-bottom: 1rem;
+  }
+  .story blockquote {
+    margin: 2rem 0;
+    padding: 0;
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    color: var(--color-choc);
+    line-height: 1.2;
+  }
+  .facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1.5rem;
+    padding: 0;
+    list-style: none;
+  }
+  .facts li {
+    padding: 0.55rem 1rem;
+    border-radius: var(--radius-pill);
+    background: var(--color-rose-50);
+    font-size: var(--text-sm);
+  }
+  @media (max-width: 860px) {
+    .story-grid {
+      grid-template-columns: 1fr;
+    }
+    .story-photo {
+      max-width: 420px;
+    }
+  }
 }
 
 @keyframes logoIn {
@@ -606,5 +884,23 @@
   }
   .hero-reveal h2 {
     display: none;
+  }
+  .man-track {
+    height: auto;
+  }
+  .man-stage {
+    position: relative;
+    height: auto;
+    padding: 6rem 0;
+  }
+  .man-text .ln,
+  .man-text .last {
+    color: var(--color-cacau);
+  }
+  .man-progress {
+    display: none;
+  }
+  .ingr-photos figure {
+    transform: none !important;
   }
 }
