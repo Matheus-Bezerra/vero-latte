@@ -6,6 +6,7 @@ export const contactSection = {
   title: "Fale com a equipe",
   text: "Dúvidas, pedidos especiais ou orçamento para eventos. Responda pelo formulário ou chame direto.",
   directTitle: "Canais diretos",
+  socialsTitle: "Siga a Vero Latte",
   direct: [
     { label: whatsappMain.label, display: whatsappMain.display, href: whatsappMain.href, external: true },
     { label: "Telefone", display: phoneMain.display, href: phoneMain.href, external: false },

@@ -32,4 +32,6 @@ máximo 2400 px no lado maior, salva em JPEG com qualidade 85 e remove os metada
 | `loja-campo-belo.jpg` | https://static.wixstatic.com/media/d72874_aa9ac2dd0de94a3ab6f8d06648eb2b2d~mv2.jpg | /lojas | Fachada. A legenda gravada na base é escondida por CSS (quadro 16:9, alinhado ao topo). |
 | `loja-cidade-jardim.jpg` | https://static.wixstatic.com/media/d72874_a930852cc9d84a1fbaa9673d0f24fae8~mv2.jpg | /lojas | Quiosque. Mesmo tratamento da legenda. |
 
+Ícones de redes sociais (Instagram, YouTube, Facebook, Pinterest): glifos do Simple Icons (https://simpleicons.org, licença CC0), embutidos em `src/components/ui/SocialIcon.tsx`. As marcas pertencem às respectivas empresas.
+
 Instagram: ainda sem imagens. Se forem adicionadas em `public/img/instagram/`, registre a origem aqui.

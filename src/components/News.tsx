@@ -1,9 +1,11 @@
 import { contactSection } from "@/data/contactForm";
+import { socials } from "@/data/contacts";
 import { newsletter } from "@/data/newsletter";
 import { ContactForm } from "./ContactForm";
 import { NewsletterForm } from "./NewsletterForm";
 import { ExternalLink } from "./ui/ExternalLink";
 import { Kicker } from "./ui/Kicker";
+import { SocialIcon } from "./ui/SocialIcon";
 
 export function News() {
   return (
@@ -23,6 +25,16 @@ export function News() {
                 ) : (
                   <a href={d.href}>{d.display}</a>
                 )}
+              </li>
+            ))}
+          </ul>
+          <h3 className="contact-direct-t">{contactSection.socialsTitle}</h3>
+          <ul className="socials contact-socials">
+            {socials.map((s) => (
+              <li key={s.network}>
+                <ExternalLink href={s.href} aria-label={s.label} title={s.label}>
+                  <SocialIcon network={s.network} />
+                </ExternalLink>
               </li>
             ))}
           </ul>
