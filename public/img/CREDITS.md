@@ -11,8 +11,8 @@ máximo 2400 px no lado maior, salva em JPEG com qualidade 85 e remove os metada
 |---|---|---|---|
 | `logo.png` | Arquivo enviado por Matheus (extraído do site oficial) | Site oficial | Logotipo, PNG transparente 338×348 |
 | `hero-palito-goiabada.jpg` | https://static.wixstatic.com/media/d72874_09cff18fc9e14fef94b9a442b3e85365~mv2.jpg | Home | Palitos com cobertura branca e goiabada. Fora de uso desde que a abertura passou a usar a bandeja. |
-| `hero-caixa-rosa-panoramica.png` | Arquivo enviado por Matheus (imagem própria, 1774×887) | Abertura | Caixa rosa com quatro gelatos embalados e prato com quatro gelatos no palito. Revelada pela rolagem na abertura. |
-| `hero-caixa-rosa-retrato.png` | Arquivo enviado por Matheus (imagem própria, 1024×1536, estendida para 1024×2304 com fundo bege em cima e embaixo, para não cortar a largura em celulares compridos) | Abertura | Versão retrato (≈9:20) da caixa rosa, usada em celular e tablet em pé. |
+| `hero-caixa-rosa-panoramica.jpg` | Arquivo enviado por Matheus (imagem própria, 1774×887; PNG original convertido para JPEG q92 em 27/11/2026) | Abertura | Caixa rosa com quatro gelatos embalados e prato com quatro gelatos no palito. Revelada pela rolagem na abertura. |
+| `hero-caixa-rosa-retrato.jpg` | Arquivo enviado por Matheus (imagem própria, 1024×1536, estendida para 1024×2304 com fundo bege em cima e embaixo, para não cortar a largura em celulares compridos; PNG convertido para JPEG q92 em 27/11/2026) | Abertura | Versão retrato (≈9:20) da caixa rosa, usada em celular e tablet em pé. |
 | `produto-palito-brigadeiro.jpg` | https://static.wixstatic.com/media/d72874_027ceb30c1e24ccea34b6a4a4eb44812~mv2.jpg | /gelatonopalito | Brigadeiro com granulado |
 | `produto-bombom.jpg` | https://static.wixstatic.com/media/d72874_eb5cb1972cb0489892d2369d4b59c94f~mv2.jpg | /bombons | Bombom cortado |
 | `produto-gran-gelato.jpg` | https://static.wixstatic.com/media/d72874_b007a5feaeaf49abbd02f6b5553de403~mv2.jpg | /grangelato | Gran Gelato fatiado |

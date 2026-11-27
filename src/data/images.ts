@@ -13,8 +13,8 @@ export { default as cheesecakeImg } from "../../public/img/pinterest-cheesecake-
 export { default as affogatoImg } from "../../public/img/pinterest-affogato.jpg";
 export { default as marianaImg } from "../../public/img/historia-mariana-galvao.jpg";
 export { default as carrinhoImg } from "../../public/img/eventos-carrinho.jpg";
-export { default as caixaRosaPanoramicaImg } from "../../public/img/hero-caixa-rosa-panoramica.png";
-export { default as caixaRosaRetratoImg } from "../../public/img/hero-caixa-rosa-retrato.png";
+export { default as caixaRosaPanoramicaImg } from "../../public/img/hero-caixa-rosa-panoramica.jpg";
+export { default as caixaRosaRetratoImg } from "../../public/img/hero-caixa-rosa-retrato.jpg";
 export { default as bandejaImg } from "../../public/img/eventos-bandeja-gelo-seco.jpg";
 export { default as campoBeloImg } from "../../public/img/loja-campo-belo.jpg";
 export { default as cidadeJardimImg } from "../../public/img/loja-cidade-jardim.jpg";

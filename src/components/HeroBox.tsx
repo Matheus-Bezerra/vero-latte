@@ -23,7 +23,10 @@ export function HeroBox() {
     el.style.setProperty("--p", p.toFixed(4));
   });
 
-  const common = { fill: true, sizes: "100vw", quality: 90, preload: true, fetchPriority: "high" as const };
+  // Direção de arte com <picture>: o navegador baixa só a versão que casa com o `media`.
+  // Sem `preload` (getImageProps não emite <link> e faria baixar as duas); a prioridade
+  // vem do fetchPriority. Qualidade 85 = o maior valor liberado em next.config `qualities`.
+  const common = { fill: true, sizes: "100vw", quality: 85, fetchPriority: "high" as const };
   const { props: landscape } = getImageProps({ ...common, src: hero.photo.src, alt: hero.photo.alt });
   const { props: portrait } = getImageProps({ ...common, src: hero.photoPortrait.src, alt: hero.photoPortrait.alt });
 
@@ -39,16 +42,6 @@ export function HeroBox() {
             <img {...landscape} />
           </picture>
         </div>
-
-        <div className="hero-reveal on-dark">
-          <div className="wrap">
-            <h2>{hero.revealTitle}</h2>
-            <p>{hero.revealText}</p>
-          </div>
-        </div>
-
-        <PopsiclePattern className="lid lid-l" />
-        <PopsiclePattern className="lid lid-r" />
 
         <div className="label">
           <Image
@@ -76,6 +69,16 @@ export function HeroBox() {
             <i />
           </div>
         </div>
+
+        <div className="hero-reveal on-dark">
+          <div className="wrap">
+            <h2>{hero.revealTitle}</h2>
+            <p>{hero.revealText}</p>
+          </div>
+        </div>
+
+        <PopsiclePattern className="lid lid-l" />
+        <PopsiclePattern className="lid lid-r" />
       </div>
     </section>
   );
