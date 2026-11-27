@@ -3,6 +3,7 @@ import { events } from "@/data/events";
 import { EventSteps } from "./EventSteps";
 import { Button } from "./ui/Button";
 import { Kicker } from "./ui/Kicker";
+import { Reveal } from "./ui/Reveal";
 
 export function Events() {
   const [a, b] = events.photos;
@@ -10,21 +11,27 @@ export function Events() {
     <section className="sec events on-dark" id="eventos" aria-labelledby="ev-t">
       <div className="wrap">
         <div className="sec-head">
-          <Kicker>{events.kicker}</Kicker>
-          <h2 id="ev-t">{events.title}</h2>
-          <p>{events.intro}</p>
+          <Reveal>
+            <Kicker>{events.kicker}</Kicker>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <h2 id="ev-t">{events.title}</h2>
+          </Reveal>
+          <Reveal delay={0.2}>
+            <p>{events.intro}</p>
+          </Reveal>
         </div>
         <div className="ev-grid">
           <div className="ev-photos">
             {a && (
-              <div className="ph a">
+              <Reveal className="ph a" kind="arch">
                 <Image src={a.src} alt={a.alt} sizes="(max-width: 860px) 56vw, 380px" />
-              </div>
+              </Reveal>
             )}
             {b && (
-              <div className="ph b">
+              <Reveal className="ph b" kind="arch" delay={0.25}>
                 <Image src={b.src} alt={b.alt} sizes="(max-width: 860px) 38vw, 260px" />
-              </div>
+              </Reveal>
             )}
           </div>
           <div>
