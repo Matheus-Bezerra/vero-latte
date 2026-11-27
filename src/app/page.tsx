@@ -1,4 +1,5 @@
 import { HeroBox } from "@/components/HeroBox";
+import { Notice } from "@/components/Notice";
 import { MobileActionBar } from "@/components/MobileActionBar";
 import { NavPill } from "@/components/NavPill";
 import { Products } from "@/components/Products";
@@ -13,6 +14,8 @@ import { BoxClose } from "@/components/BoxClose";
 export default function Home() {
   return (
     <>
+      {/* aviso de conceito só na home; as páginas internas não repetem a faixa */}
+      <Notice />
       <NavPill />
       <main id="conteudo" tabIndex={-1}>
         <HeroBox />

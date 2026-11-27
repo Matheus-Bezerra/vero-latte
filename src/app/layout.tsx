@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { Cinzel, Nunito_Sans } from "next/font/google";
-import { Notice } from "@/components/Notice";
 import { Footer } from "@/components/Footer";
 import { site } from "@/data/site";
 import "./globals.css";
@@ -54,7 +53,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <a className="skip" href="#conteudo">
           {site.skipLink}
         </a>
-        <Notice />
         {children}
         <Footer />
       </body>
