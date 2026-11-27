@@ -10,7 +10,7 @@ máximo 2400 px no lado maior, salva em JPEG com qualidade 85 e remove os metada
 | Arquivo | Origem | Página | Descrição |
 |---|---|---|---|
 | `logo.png` | Arquivo enviado por Matheus (extraído do site oficial) | Site oficial | Logotipo, PNG transparente 338×348 |
-| `hero-palito-goiabada.jpg` | https://static.wixstatic.com/media/d72874_09cff18fc9e14fef94b9a442b3e85365~mv2.jpg | Home | Palitos com cobertura branca e goiabada. Fora de uso desde que a abertura passou a usar a bandeja. |
+| `hero-palito-goiabada.jpg` | https://static.wixstatic.com/media/d72874_09cff18fc9e14fef94b9a442b3e85365~mv2.jpg | Home | Palitos com cobertura branca e goiabada. Saiu da abertura; hoje é a foto do item "Todos os produtos" na seção Produtos. |
 | `hero-caixa-rosa-panoramica.jpg` | Arquivo enviado por Matheus (imagem própria, 1774×887; PNG original convertido para JPEG q92 em 27/11/2026) | Abertura | Caixa rosa com quatro gelatos embalados e prato com quatro gelatos no palito. Revelada pela rolagem na abertura. |
 | `hero-caixa-rosa-retrato.jpg` | Arquivo enviado por Matheus (imagem própria, 1024×1536, estendida para 1024×2304 com fundo bege em cima e embaixo, para não cortar a largura em celulares compridos; PNG convertido para JPEG q92 em 27/11/2026) | Abertura | Versão retrato (≈9:20) da caixa rosa, usada em celular e tablet em pé. |
 | `produto-palito-brigadeiro.jpg` | https://static.wixstatic.com/media/d72874_027ceb30c1e24ccea34b6a4a4eb44812~mv2.jpg | /gelatonopalito | Brigadeiro com granulado |
@@ -31,6 +31,22 @@ máximo 2400 px no lado maior, salva em JPEG com qualidade 85 e remove os metada
 | `rappi-logo.svg` | https://commons.wikimedia.org/wiki/File:Rappi_logo.svg | Wikimedia Commons | Logotipo do Rappi. Marca registrada do Rappi, mesmo uso. |
 | `loja-campo-belo.jpg` | https://static.wixstatic.com/media/d72874_aa9ac2dd0de94a3ab6f8d06648eb2b2d~mv2.jpg | /lojas | Fachada. A legenda gravada na base é escondida por CSS (quadro 16:9, alinhado ao topo). |
 | `loja-cidade-jardim.jpg` | https://static.wixstatic.com/media/d72874_a930852cc9d84a1fbaa9673d0f24fae8~mv2.jpg | /lojas | Quiosque. Mesmo tratamento da legenda. |
+
+
+## Catálogo (`public/img/produtos/`)
+
+Fotos da página /produtos, baixadas do site oficial em 27/11/2026 pelo mesmo script, com no máximo 1200 px no lado maior. Origem:
+`https://static.wixstatic.com/media/d72874_<id>~mv2.jpg` (os ids estão em `scripts/download-images.mjs`).
+Os sete produtos que já tinham foto acima (brigadeiro no palito, pistache no palito, bombom brigadeiro,
+Gran Gelato leite cremoso, sorbet de manga, pistache em massa e caixa com 12 palitos) reaproveitam o arquivo existente.
+
+| Página de origem | Arquivos |
+|---|---|
+| /gelatonopalito | `palito-*.jpg` (10) |
+| /bombons | `bombom-*.jpg` (8) |
+| /grangelato | `gran-*.jpg` (3) |
+| /gelatomassa | `massa-*.jpg` (2) |
+| /presentes | `presente-*.jpg` (3) |
 
 Ícones de redes sociais (Instagram, YouTube, Facebook, Pinterest): glifos do Simple Icons (https://simpleicons.org, licença CC0), embutidos em `src/components/ui/SocialIcon.tsx`. As marcas pertencem às respectivas empresas.
 

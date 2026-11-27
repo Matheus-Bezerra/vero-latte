@@ -1,5 +1,6 @@
 // Imports estáticos de public/img/. Origem de cada arquivo em public/img/CREDITS.md.
 export { default as logo } from "../../public/img/logo.png";
+export { default as todosImg } from "../../public/img/hero-palito-goiabada.jpg";
 export { default as palitoImg } from "../../public/img/produto-palito-brigadeiro.jpg";
 export { default as bombomImg } from "../../public/img/produto-bombom.jpg";
 export { default as granImg } from "../../public/img/produto-gran-gelato.jpg";
@@ -20,3 +21,31 @@ export { default as campoBeloImg } from "../../public/img/loja-campo-belo.jpg";
 export { default as cidadeJardimImg } from "../../public/img/loja-cidade-jardim.jpg";
 export { default as ifoodLogo } from "../../public/img/ifood-logo.svg";
 export { default as rappiLogo } from "../../public/img/rappi-logo.svg";
+
+// Catálogo da página /produtos (public/img/produtos/).
+export { default as palitoCapimLimaoImg } from "../../public/img/produtos/palito-capim-limao.jpg";
+export { default as palitoBaunilhaImg } from "../../public/img/produtos/palito-baunilha.jpg";
+export { default as palitoPacocaImg } from "../../public/img/produtos/palito-pacoca.jpg";
+export { default as palitoCocoCocadaImg } from "../../public/img/produtos/palito-coco-cocada.jpg";
+export { default as palitoCheesecakeGoiabadaImg } from "../../public/img/produtos/palito-cheesecake-goiabada.jpg";
+export { default as palitoGianduiaImg } from "../../public/img/produtos/palito-gianduia.jpg";
+export { default as palitoTortaLimaoImg } from "../../public/img/produtos/palito-torta-limao.jpg";
+export { default as palitoMorangoImg } from "../../public/img/produtos/palito-morango.jpg";
+export { default as palitoDoceDeLeiteImg } from "../../public/img/produtos/palito-doce-de-leite.jpg";
+export { default as palitoBananaCaramelizadaImg } from "../../public/img/produtos/palito-banana-caramelizada.jpg";
+export { default as bombomPacocaImg } from "../../public/img/produtos/bombom-pacoca.jpg";
+export { default as bombomBaunilhaImg } from "../../public/img/produtos/bombom-baunilha.jpg";
+export { default as bombomBananaCaramelizadaImg } from "../../public/img/produtos/bombom-banana-caramelizada.jpg";
+export { default as bombomCocoCocadaImg } from "../../public/img/produtos/bombom-coco-cocada.jpg";
+export { default as bombomCapimLimaoImg } from "../../public/img/produtos/bombom-capim-limao.jpg";
+export { default as bombomPistacheImg } from "../../public/img/produtos/bombom-pistache.jpg";
+export { default as bombomMorangoImg } from "../../public/img/produtos/bombom-morango.jpg";
+export { default as bombomZeroLactoseImg } from "../../public/img/produtos/bombom-zero-lactose.jpg";
+export { default as granCheesecakeImg } from "../../public/img/produtos/gran-cheesecake.jpg";
+export { default as granNocciolaImg } from "../../public/img/produtos/gran-nocciola.jpg";
+export { default as granPistacheImg } from "../../public/img/produtos/gran-pistache.jpg";
+export { default as massaChocolateNoirImg } from "../../public/img/produtos/massa-chocolate-noir.jpg";
+export { default as massaDoceDeLeiteImg } from "../../public/img/produtos/massa-doce-de-leite.jpg";
+export { default as presente4LatasPequenasImg } from "../../public/img/produtos/presente-4-latas-pequenas.jpg";
+export { default as presenteKitBolsaTermicaImg } from "../../public/img/produtos/presente-kit-bolsa-termica.jpg";
+export { default as presente4LatasGrandesImg } from "../../public/img/produtos/presente-4-latas-grandes.jpg";

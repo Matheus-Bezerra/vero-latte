@@ -1,26 +1,13 @@
-import Image from "next/image";
-import Link from "next/link";
-import { logo } from "@/data/images";
 import { headquarters, hours, phoneMain, whatsappMain } from "@/data/contacts";
 import { policyLabels, type PolicyPage as PolicyContent } from "@/data/policies";
-import { site } from "@/data/site";
 import { ExternalLink } from "./ui/ExternalLink";
 import { Kicker } from "./ui/Kicker";
+import { PageTop } from "./ui/PageTop";
 
 export function PolicyPage({ page }: { page: PolicyContent }) {
   return (
     <>
-      <header className="policy-top">
-        <div className="wrap">
-          <Link className="policy-brand" href={policyLabels.backHref}>
-            <Image src={logo} alt="" width={46} height={47} sizes="46px" />
-            <span>{site.name}</span>
-          </Link>
-          <Link className="policy-back" href={policyLabels.backHref}>
-            <span aria-hidden="true">←</span> {policyLabels.back}
-          </Link>
-        </div>
-      </header>
+      <PageTop />
       <main id="conteudo" tabIndex={-1} className="policy">
         <div className="wrap policy-grid">
           <div className="policy-head">

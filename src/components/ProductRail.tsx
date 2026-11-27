@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import NextLink from "next/link";
 import { useRef, useState } from "react";
 import type { Product } from "@/data/types";
 
@@ -20,19 +21,18 @@ export function ProductRail({ products, label }: { products: Product[]; label: s
     <>
       <div className="p-rail" ref={ref} onScroll={onScroll} role="region" aria-label={label}>
         {products.map((p) => (
-          <a
+          <NextLink
             key={p.id}
             className="p-card"
             href={p.link.href}
-            target="_blank"
-            rel="noopener noreferrer"
+            {...(p.link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
           >
             <div className="ph">
               <Image src={p.photo.src} alt="" sizes="78vw" />
             </div>
             <h3>{p.name}</h3>
             <p>{p.short}</p>
-          </a>
+          </NextLink>
         ))}
       </div>
       <div className="rail-dots" aria-hidden="true">

@@ -1,3 +1,4 @@
+import NextLink from "next/link";
 import type { Product } from "@/data/types";
 import { ExternalLink } from "./ui/ExternalLink";
 
@@ -24,7 +25,10 @@ function GelatoCone() {
     <span className="p-cone" aria-hidden="true">
       <svg viewBox="0 0 24 24" className="cone-line">
         {shape}
-        <path className="cone-grid" d="M8.8 15.2l4.6 4.6M10.6 14.4l4.1 4.1M15.2 15.2l-4.6 4.6M13.4 14.4l-4.1 4.1" />
+        <path
+          className="cone-grid"
+          d="M8.8 15.2l4.6 4.6M10.6 14.4l4.1 4.1M15.2 15.2l-4.6 4.6M13.4 14.4l-4.1 4.1"
+        />
       </svg>
       <svg viewBox="0 0 24 24" className="cone-fill">
         {shape}
@@ -69,7 +73,11 @@ export function ProductIndex({ products, active, onSelect }: Props) {
             <div className="p-body" id={bodyId}>
               <div inert={!isActive}>
                 <p>{p.description}</p>
-                <ExternalLink href={p.link.href}>{p.link.label}</ExternalLink>
+                {p.link.external ? (
+                  <ExternalLink href={p.link.href}>{p.link.label}</ExternalLink>
+                ) : (
+                  <NextLink href={p.link.href}>{p.link.label}</NextLink>
+                )}
               </div>
             </div>
           </li>

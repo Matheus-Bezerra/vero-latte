@@ -7,6 +7,8 @@ import sharp from "sharp";
 
 // Lado maior máximo e qualidade do JPEG salvo. O next/image gera AVIF/WebP a partir daqui.
 const MAX = 2400;
+// Fotos do catálogo aparecem com no máximo ~440 px; 1200 px cobre telas 2x com folga.
+const MAX_CATALOG = 1200;
 const QUALITY = 85;
 
 const WIX = "https://static.wixstatic.com/media/";
@@ -29,7 +31,35 @@ export const images = [
   ["eventos-carrinho.jpg", WIX + "d72874_984c520eb1f3437a89d63aa1c6fe35d8~mv2.jpeg"],
   ["eventos-bandeja-gelo-seco.jpg", WIX + "d72874_61b5b9634f2845f1813928be62fc464c~mv2.jpg"],
   ["loja-campo-belo.jpg", WIX + "d72874_aa9ac2dd0de94a3ab6f8d06648eb2b2d~mv2.jpg"],
-  ["loja-cidade-jardim.jpg", WIX + "d72874_a930852cc9d84a1fbaa9673d0f24fae8~mv2.jpg"],
+  ["loja-cidade-jardim.jpg", WIX + "d72874_a930852cc9d84a1fbaa9673d0f24fae8~mv2.jpg"], // Catálogo da página /produtos (fotos que ainda não estavam acima).
+  ...[
+    ["palito-capim-limao", "e61821edc5754969bddaef7ef559c0c7"],
+    ["palito-baunilha", "9bc394d055ac47068eff98da428aa675"],
+    ["palito-pacoca", "c9ec2276d05844629ae245d378015b17"],
+    ["palito-coco-cocada", "ceb3623e19a54afd904cf5864d494fbd"],
+    ["palito-cheesecake-goiabada", "8f6f56e0dd114af7ac4eec26da70b21e"],
+    ["palito-gianduia", "eb2fc237a73e41fea21b745bea0bc9ce"],
+    ["palito-torta-limao", "df300404f5c54094ab502bb5202125a2"],
+    ["palito-morango", "7bb16a6856f9416fb54c5f6d3f8452bc"],
+    ["palito-doce-de-leite", "bea947f6368b4c26acaf90450266c02a"],
+    ["palito-banana-caramelizada", "460eec17364f4fb5953f3e5ce76ebf32"],
+    ["bombom-pacoca", "031a26a3619745f19deaf8d875b1c9f0"],
+    ["bombom-baunilha", "2a3b4c24427c45cd862a6b833bf64ed3"],
+    ["bombom-banana-caramelizada", "e7072f2520db42c0a8754d238e013877"],
+    ["bombom-coco-cocada", "54d43e09998940f5ba6c4960db50658a"],
+    ["bombom-capim-limao", "7c31d9567a7043319aa263dc22e4af9b"],
+    ["bombom-pistache", "aab1ad09eb574959a6cb09e69a79382b"],
+    ["bombom-morango", "045f4eef27e343648654dbc425784bc4"],
+    ["bombom-zero-lactose", "16537444fb3f479d9a196ed100e96e40"],
+    ["gran-cheesecake", "8c13954770834176b6c6cb8a45188e04"],
+    ["gran-nocciola", "562a152a42694a31b6e6eaebc8ef2031"],
+    ["gran-pistache", "e92165f6290442c2b66f581bce692377"],
+    ["massa-chocolate-noir", "00b43cd4bf6f47c2a724bd76e565e6c3"],
+    ["massa-doce-de-leite", "1ae9dde0b42849ba9ff55b38d0ff9a73"],
+    ["presente-4-latas-pequenas", "df16b08700b24e09bf75d6f60bc1ed9e", "jpeg"],
+    ["presente-kit-bolsa-termica", "4a70deccde2b4a8586171394575b2880"],
+    ["presente-4-latas-grandes", "8acf3c686f1e435591726d362c409caf", "jpeg"],
+  ].map(([name, id, ext = "jpg"]) => [`produtos/${name}.jpg`, `${WIX}d72874_${id}~mv2.${ext}`]),
 ];
 
 const out = path.resolve("public/img");
@@ -38,6 +68,7 @@ await mkdir(out, { recursive: true });
 
 for (const [name, url] of images) {
   const file = path.join(out, name);
+  await mkdir(path.dirname(file), { recursive: true });
   if (!force) {
     try {
       await access(file);
@@ -57,10 +88,11 @@ for (const [name, url] of images) {
     process.exitCode = 1;
     continue;
   }
+  const max = name.startsWith("produtos/") ? MAX_CATALOG : MAX;
   // rotate() aplica a orientação do EXIF; os metadados (EXIF/GPS) não são gravados.
   const buf = await sharp(Buffer.from(await res.arrayBuffer()))
     .rotate()
-    .resize({ width: MAX, height: MAX, fit: "inside", withoutEnlargement: true })
+    .resize({ width: max, height: max, fit: "inside", withoutEnlargement: true })
     .jpeg({ quality: QUALITY, mozjpeg: true })
     .toBuffer();
   await writeFile(file, buf);

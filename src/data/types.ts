@@ -83,3 +83,23 @@ export type EventStep = {
   title: string;
   text: string;
 };
+
+/** Categorias do catálogo. Os ids batem com os de `products` e com ?categoria= da página /produtos. */
+export type CatalogCategoryId = "palito" | "bombons" | "gran-gelato" | "massa" | "presentes";
+
+/** Um produto da página /produtos. Texto reproduzido do site oficial; o que ele não traz fica ausente. */
+export type CatalogItem = {
+  /** Único no catálogo; usado no id do card e do modal. */
+  id: string;
+  category: CatalogCategoryId;
+  name: string;
+  /** Texto curto do card e do topo do modal. */
+  description: string;
+  /** Parágrafos extras que o site oficial mostra no detalhe. */
+  details?: string[];
+  ingredients?: string;
+  allergens?: string;
+  /** Avisos curtos (vegano, sem lactose, peso). */
+  notes?: string[];
+  photo: Photo;
+};
