@@ -8,6 +8,7 @@ import { FounderStory } from "@/components/FounderStory";
 import { Events } from "@/components/Events";
 import { Stores } from "@/components/Stores";
 import { News } from "@/components/News";
+import { BoxClose } from "@/components/BoxClose";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
         <Events />
         <Stores />
         <News />
+        <BoxClose />
       </main>
       <MobileActionBar />
     </>
