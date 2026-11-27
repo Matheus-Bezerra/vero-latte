@@ -9,13 +9,11 @@ import { useScrollProgress } from "@/hooks/useScrollProgress";
 import { Button } from "./ui/Button";
 import { MobileSheet } from "./MobileSheet";
 
-const ids = navItems.map((n) => n.id);
-
 export function NavPill() {
   const navRef = useRef<HTMLElement>(null);
   const menuBtnRef = useRef<HTMLButtonElement>(null);
   const [open, setOpen] = useState(false);
-  const active = useActiveSection(ids);
+  const active = useActiveSection();
 
   // A altura da faixa de aviso define o topo do menu (--notice-h).
   useEffect(() => {
