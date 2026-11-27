@@ -2412,6 +2412,9 @@
     color: var(--color-stone);
   }
 
+  .cat-pending {
+    min-height: 100svh;
+  }
   .cat-grid {
     list-style: none;
     margin: 0;

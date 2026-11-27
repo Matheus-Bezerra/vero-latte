@@ -1,17 +1,30 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { CatalogBrowser, CatalogFromUrl } from "@/components/CatalogBrowser";
+import { CatalogBrowser } from "@/components/CatalogBrowser";
 import { Kicker } from "@/components/ui/Kicker";
 import { ExternalLink } from "@/components/ui/ExternalLink";
 import { PageTop } from "@/components/ui/PageTop";
-import { catalogPage } from "@/data/catalog";
+import { catalogPage, isCatalogCategory } from "@/data/catalog";
 
 export const metadata: Metadata = {
   title: catalogPage.metaTitle,
   description: catalogPage.metaDescription,
 };
 
-export default function Page() {
+type Props = { searchParams: Promise<{ categoria?: string | string[] }> };
+
+/**
+ * O filtro de ?categoria= é aplicado no servidor: o HTML já chega só com os produtos da
+ * categoria, sem baixar as fotos das outras. Topo e título ficam no shell estático.
+ */
+async function Catalog({ searchParams }: Props) {
+  const { categoria } = await searchParams;
+  const initial = isCatalogCategory(categoria) ? categoria : "todos";
+  // key: indo de uma categoria para outra pela mesma rota, o filtro recomeça do novo valor
+  return <CatalogBrowser key={initial} initial={initial} />;
+}
+
+export default function Page({ searchParams }: Props) {
   return (
     <>
       <PageTop />
@@ -22,8 +35,9 @@ export default function Page() {
             <h1>{catalogPage.title}</h1>
             <p>{catalogPage.intro}</p>
           </div>
-          <Suspense fallback={<CatalogBrowser />}>
-            <CatalogFromUrl />
+          {/* espaço reservado enquanto a grade chega no mesmo stream, sem fotos erradas */}
+          <Suspense fallback={<div className="cat-pending" aria-hidden="true" />}>
+            <Catalog searchParams={searchParams} />
           </Suspense>
           <p className="cat-source">
             {catalogPage.source.intro}{" "}

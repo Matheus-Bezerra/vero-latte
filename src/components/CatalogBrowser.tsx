@@ -1,16 +1,19 @@
 "use client";
 
 import Image from "next/image";
-import { useSearchParams } from "next/navigation";
 import { useRef, useState, type CSSProperties } from "react";
 import { flushSync } from "react-dom";
-import { catalog, catalogCategories, catalogPage, isCatalogCategory } from "@/data/catalog";
+import { catalog, catalogCategories, catalogPage } from "@/data/catalog";
 import type { CatalogCategoryId, CatalogItem } from "@/data/types";
 import { CATALOG_PHOTO_SIZES, ProductModal } from "./ProductModal";
 
-type Filter = CatalogCategoryId | "todos";
+export type CatalogFilter = CatalogCategoryId | "todos";
+type Filter = CatalogFilter;
 
 const labelOf = (id: CatalogCategoryId) => catalogCategories.find((c) => c.id === id)?.label;
+
+/** Cards da primeira dobra: carregam na hora, sem esperar o lazy loading. */
+const EAGER = 4;
 
 /** Só os primeiros cards escalonam; o resto entra junto, para a grade não demorar. */
 const STAGGER_CAP = 8;
@@ -107,7 +110,13 @@ export function CatalogBrowser({ initial = "todos" }: { initial?: Filter }) {
               }}
             >
               <span className="cat-ph">
-                <Image src={p.photo.src} alt={p.photo.alt} sizes={CATALOG_PHOTO_SIZES} />
+                <Image
+                  src={p.photo.src}
+                  alt={p.photo.alt}
+                  sizes={CATALOG_PHOTO_SIZES}
+                  loading={i < EAGER ? "eager" : "lazy"}
+                  fetchPriority={i === 0 ? "high" : undefined}
+                />
               </span>
               <span className="cat-cat">{labelOf(p.category)}</span>
               <span className="cat-name">{p.name}</span>
@@ -129,11 +138,4 @@ export function CatalogBrowser({ initial = "todos" }: { initial?: Filter }) {
       />
     </>
   );
-}
-
-/** Lê ?categoria= da URL. Fica dentro de <Suspense>; o fallback mostra todos os produtos. */
-export function CatalogFromUrl() {
-  const value = useSearchParams().get("categoria");
-  const initial = isCatalogCategory(value) ? value : "todos";
-  return <CatalogBrowser key={initial} initial={initial} />;
 }
