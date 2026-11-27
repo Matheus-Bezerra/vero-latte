@@ -21,8 +21,8 @@ export const notice = {
 export const navItems: NavItem[] = [
   { id: "inicio", label: "Início" },
   { id: "produtos", label: "Produtos" },
-  { id: "eventos", label: "Eventos" },
   { id: "sobre", label: "Sobre" },
+  { id: "eventos", label: "Eventos" },
   { id: "lojas", label: "Lojas" },
   { id: "contato", label: "Contato" },
 ];
@@ -44,8 +44,8 @@ export const footer = {
   navTitle: "Navegue",
   nav: [
     { label: "Produtos", href: "#produtos" },
-    { label: "Eventos", href: "#eventos" },
     { label: "Sobre", href: "#sobre" },
+    { label: "Eventos", href: "#eventos" },
     { label: "Lojas", href: "#lojas" },
     { label: "Delivery", href: "#delivery" },
   ] satisfies Link[],
