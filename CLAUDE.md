@@ -1,6 +1,6 @@
 # Vero Latte · Home (redesign conceitual independente)
 
-Projeto de portfólio de Matheus Bezerra. Não tem vínculo nem aprovação da Vero Latte. O aviso de conceito deve ficar visível.
+Projeto de portfólio de Matheus Bezerra. Não tem vínculo nem aprovação da Vero Latte. O aviso de conceito (faixa no topo) fica visível só na home; as páginas internas não repetem a faixa.
 
 ## Referências
 - `design/HANDOFF.md` é a fonte de verdade. `design/index.html` é a referência visual e de comportamento na primeira vez de implementação.
