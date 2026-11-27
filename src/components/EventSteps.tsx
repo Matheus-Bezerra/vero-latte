@@ -17,19 +17,21 @@ export function EventSteps({ steps }: { steps: EventStep[] }) {
   useScrollProgress(({ vh }) => {
     const el = ref.current;
     if (!el) return;
+    // Primeiro todas as leituras de layout, depois as escritas: intercalar as duas
+    // forçaria um recálculo de layout por passo a cada frame.
     const r = el.getBoundingClientRect();
+    const items = Array.from(el.children) as HTMLElement[];
+    const bullets = items.map((li) => li.getBoundingClientRect().top + 16);
     const sp = clamp((vh * 0.75 - r.top) / r.height);
-    el.style.setProperty("--sp", sp.toFixed(3));
-    el.dataset.live = "1";
-
     // Ponta da linha, em coordenadas da viewport (a linha vai de top+8 a bottom-8).
     const head = r.top + 8 + sp * (r.height - 16);
-    const items = el.children;
-    for (let i = 0; i < items.length; i++) {
-      const li = items[i] as HTMLElement;
-      const next = head >= li.getBoundingClientRect().top + 16 ? "1" : "0";
+
+    el.style.setProperty("--sp", sp.toFixed(3));
+    if (!el.dataset.live) el.dataset.live = "1";
+    items.forEach((li, i) => {
+      const next = head >= bullets[i]! ? "1" : "0";
       if (li.dataset.on !== next) li.dataset.on = next;
-    }
+    });
   }, !reduced);
 
   return (
