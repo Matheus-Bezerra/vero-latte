@@ -1,0 +1,390 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-27T04:01:20.493895+00:00",
+  "title": "Design System: Vero Latte Gelato · Home (conceito)",
+  "extensions": {
+    "colorMeta": {
+      "choc": {
+        "role": "primary",
+        "displayName": "Chocolate da Assinatura",
+        "canonical": "#774d28",
+        "tonalRamp": [
+          "#2a1a0c",
+          "#3e2714",
+          "#53341b",
+          "#774d28",
+          "#946a45",
+          "#b48f6d",
+          "#d4b89c",
+          "#f1e5d9"
+        ]
+      },
+      "gold": {
+        "role": "secondary",
+        "displayName": "Dourado Hot Stamping",
+        "canonical": "#bfa760",
+        "tonalRamp": [
+          "#3d3317",
+          "#5c4e25",
+          "#8a7740",
+          "#bfa760",
+          "#cfbb7f",
+          "#e3d4a6",
+          "#efe5c8",
+          "#f9f4e6"
+        ]
+      },
+      "gold-soft": {
+        "role": "secondary",
+        "displayName": "Dourado Suave",
+        "canonical": "#e3d4a6",
+        "tonalRamp": [
+          "#5c4e25",
+          "#8a7740",
+          "#bfa760",
+          "#d6c48c",
+          "#e3d4a6",
+          "#ece1c0",
+          "#f4edd8",
+          "#faf7ec"
+        ]
+      },
+      "rose": {
+        "role": "tertiary",
+        "displayName": "Rosa da Embalagem",
+        "canonical": "#d0ada4",
+        "tonalRamp": [
+          "#4a2e28",
+          "#6e4a42",
+          "#966d64",
+          "#bf8a80",
+          "#d0ada4",
+          "#e0c7c0",
+          "#eedcd7",
+          "#f8efec"
+        ]
+      },
+      "rose-box": {
+        "role": "tertiary",
+        "displayName": "Rosa Caixa",
+        "canonical": "#bf8a80",
+        "tonalRamp": [
+          "#4a2e28",
+          "#6e4a42",
+          "#966d64",
+          "#bf8a80",
+          "#d0ada4",
+          "#e0c7c0",
+          "#eedcd7",
+          "#f8efec"
+        ]
+      },
+      "gold-pattern": {
+        "role": "tertiary",
+        "displayName": "Dourado do Padrão",
+        "canonical": "#d9c27e",
+        "tonalRamp": [
+          "#5c4e25",
+          "#8a7740",
+          "#bfa760",
+          "#d9c27e",
+          "#e3d4a6",
+          "#ece1c0",
+          "#f4edd8",
+          "#faf7ec"
+        ]
+      },
+      "leite": {
+        "role": "neutral",
+        "displayName": "Leite Rosado",
+        "canonical": "#fbf5f1",
+        "tonalRamp": [
+          "#3b2618",
+          "#68625a",
+          "#a89c94",
+          "#d6cbc5",
+          "#ebe2dd",
+          "#f4e7e2",
+          "#f8efeb",
+          "#fbf5f1"
+        ]
+      },
+      "rose-50": {
+        "role": "neutral",
+        "displayName": "Rosa Névoa",
+        "canonical": "#f4e7e2",
+        "tonalRamp": [
+          "#3b2618",
+          "#68625a",
+          "#a89c94",
+          "#d6cbc5",
+          "#ebe2dd",
+          "#f4e7e2",
+          "#f8efeb",
+          "#fbf5f1"
+        ]
+      },
+      "cacau": {
+        "role": "neutral",
+        "displayName": "Cacau",
+        "canonical": "#3b2618",
+        "tonalRamp": [
+          "#1c120b",
+          "#2b1c12",
+          "#3b2618",
+          "#553a27",
+          "#774d28",
+          "#9c7a62",
+          "#cbb3a2",
+          "#efe3da"
+        ]
+      },
+      "stone": {
+        "role": "neutral",
+        "displayName": "Pedra",
+        "canonical": "#68625a",
+        "tonalRamp": [
+          "#25221f",
+          "#3b3833",
+          "#524d47",
+          "#68625a",
+          "#8a847c",
+          "#aca69f",
+          "#cfcac4",
+          "#efedea"
+        ]
+      },
+      "erro": {
+        "role": "neutral",
+        "displayName": "Erro",
+        "canonical": "#9a2e1f",
+        "tonalRamp": [
+          "#3a110b",
+          "#5c1b12",
+          "#7b2418",
+          "#9a2e1f",
+          "#bb5446",
+          "#d48479",
+          "#e8b6af",
+          "#f7e3e0"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display · Cinzel",
+        "purpose": "Títulos de seção, até 20ch."
+      },
+      "headline": {
+        "displayName": "Headline · Cinzel",
+        "purpose": "Títulos secundários e citações."
+      },
+      "title": {
+        "displayName": "Title · Nunito Sans",
+        "purpose": "Passos, cards e texto de abertura de seção."
+      },
+      "body": {
+        "displayName": "Body · Nunito Sans",
+        "purpose": "Corpo, 42–54ch."
+      },
+      "label": {
+        "displayName": "Label · Nunito Sans",
+        "purpose": "Botões, menu, kicker."
+      },
+      "display-label": {
+        "displayName": "Rótulo da abertura",
+        "purpose": "Tagline no rótulo em arco."
+      },
+      "display-product": {
+        "displayName": "Vitrine",
+        "purpose": "Nomes de categoria na lista de produtos."
+      },
+      "display-menu": {
+        "displayName": "Menu mobile",
+        "purpose": "Links da folha de menu."
+      },
+      "manifesto": {
+        "displayName": "Manifesto",
+        "purpose": "Versos que acendem; ≥24px."
+      }
+    },
+    "shadows": [
+      {
+        "name": "nav-float",
+        "value": "0 1px 0 color-mix(in srgb, #774d28 8%, transparent), 0 10px 30px -18px color-mix(in srgb, #3b2618 45%, transparent)",
+        "purpose": "Menu em pílula flutuante."
+      },
+      {
+        "name": "label-lift",
+        "value": "0 30px 60px -30px color-mix(in srgb, #3b2618 55%, transparent)",
+        "purpose": "Rótulo da abertura sobre a caixa."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-vero",
+        "value": "cubic-bezier(0.22, 0.8, 0.24, 1)",
+        "purpose": "Curva única de todo o site."
+      },
+      {
+        "name": "duration-fast",
+        "value": "0.3s",
+        "purpose": "Estados de botões e campos."
+      },
+      {
+        "name": "duration-base",
+        "value": "0.7s",
+        "purpose": "Passos que acendem, entradas curtas."
+      },
+      {
+        "name": "duration-slow",
+        "value": "1.1s",
+        "purpose": "Revelações de seção e de fotos em arco."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "641px"
+      },
+      {
+        "name": "md",
+        "value": "861px"
+      },
+      {
+        "name": "nav",
+        "value": "981px"
+      },
+      {
+        "name": "lg",
+        "value": "1021px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botão principal",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Ação principal sobre fundo claro.",
+      "html": "<button class=\"ds-btn ds-btn-choc\">Conhecer os gelatos</button>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;min-height:48px;padding:.75rem 1.5rem;border-radius:999px;font:600 .9375rem/1 'Nunito Sans',system-ui,sans-serif;letter-spacing:.02em;border:1.5px solid transparent;cursor:pointer;transition:background .3s cubic-bezier(.22,.8,.24,1),color .3s,transform .3s}.ds-btn:active{transform:scale(.97)}.ds-btn:focus-visible{outline:2px solid #774d28;outline-offset:3px}.ds-btn-choc{background:#774d28;color:#fbf5f1}.ds-btn-choc:hover{background:#3b2618}"
+    },
+    {
+      "name": "Botão dourado",
+      "kind": "button",
+      "refersTo": "button-gold",
+      "description": "Ação sobre fundo cacau.",
+      "html": "<div style=\"background:#3b2618;padding:24px\"><button class=\"ds-btn-g\">Planejar meu evento</button></div>",
+      "css": ".ds-btn-g{min-height:48px;padding:.75rem 1.5rem;border-radius:999px;font:600 .9375rem/1 'Nunito Sans',sans-serif;border:0;background:#bfa760;color:#3b2618;cursor:pointer;transition:background .3s cubic-bezier(.22,.8,.24,1),transform .3s}.ds-btn-g:hover{background:#e3d4a6}.ds-btn-g:active{transform:scale(.97)}.ds-btn-g:focus-visible{outline:2px solid #e3d4a6;outline-offset:3px}"
+    },
+    {
+      "name": "Botão contorno",
+      "kind": "button",
+      "refersTo": "button-line",
+      "description": "Ação secundária.",
+      "html": "<button class=\"ds-btn-l\">Encontrar uma loja</button>",
+      "css": ".ds-btn-l{min-height:48px;padding:.75rem 1.5rem;border-radius:999px;font:600 .9375rem/1 'Nunito Sans',sans-serif;background:transparent;color:#3b2618;border:1.5px solid currentColor;cursor:pointer;transition:background .3s cubic-bezier(.22,.8,.24,1),color .3s}.ds-btn-l:hover{background:#3b2618;color:#fbf5f1;border-color:#3b2618}.ds-btn-l:focus-visible{outline:2px solid #774d28;outline-offset:3px}"
+    },
+    {
+      "name": "Campo newsletter",
+      "kind": "input",
+      "refersTo": "field-pill",
+      "description": "Campo e botão dentro de uma pílula.",
+      "html": "<form class=\"ds-field\"><input placeholder=\"seu@email.com\" aria-label=\"E-mail\"><button>Cadastrar</button></form>",
+      "css": ".ds-field{display:flex;gap:.5rem;padding:6px;border-radius:999px;background:#fbf5f1;border:1.5px solid color-mix(in srgb,#774d28 25%,transparent);transition:border-color .3s;max-width:420px}.ds-field:focus-within{border-color:#774d28}.ds-field input{flex:1;border:0;background:transparent;padding:0 1rem;font:400 1rem 'Nunito Sans',sans-serif;color:#3b2618;outline:none}.ds-field button{min-height:44px;padding:0 1.25rem;border-radius:999px;border:0;background:#774d28;color:#fbf5f1;font:600 .9375rem 'Nunito Sans',sans-serif;cursor:pointer}.ds-field button:hover{background:#3b2618}"
+    },
+    {
+      "name": "Kicker",
+      "kind": "custom",
+      "description": "Rótulo de seção com traço dourado.",
+      "html": "<span class=\"ds-kicker\">Eventos</span>",
+      "css": ".ds-kicker{display:flex;align-items:center;gap:.6rem;font:600 .9375rem 'Nunito Sans',sans-serif;color:#774d28}.ds-kicker::before{content:'';width:22px;height:1.5px;background:#bfa760}"
+    },
+    {
+      "name": "Foto em arco",
+      "kind": "card",
+      "refersTo": "photo-arch",
+      "description": "Forma assinatura: vidro de vitrine.",
+      "html": "<div class=\"ds-arch\"></div>",
+      "css": ".ds-arch{width:200px;aspect-ratio:3/4;border-radius:999px 999px 4px 4px;background:linear-gradient(160deg,#d0ada4,#774d28);overflow:hidden}"
+    },
+    {
+      "name": "Timeline de passos",
+      "kind": "custom",
+      "description": "Linha dourada e bolinhas que acendem.",
+      "html": "<ol class=\"ds-steps\"><li class=\"on\"><b>Degustação</b></li><li class=\"on\"><b>Entrega</b></li><li><b>Retirada</b></li></ol>",
+      "css": ".ds-steps{list-style:none;margin:0;padding:24px;background:#3b2618;color:#fbf5f1;counter-reset:s;position:relative;font-family:'Nunito Sans',sans-serif}.ds-steps li{position:relative;padding:0 0 1.5rem 3.4rem;counter-increment:s;opacity:.4;transition:opacity .7s}.ds-steps li.on{opacity:1}.ds-steps li::before{content:counter(s);position:absolute;left:0;top:-6px;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;border:1.5px solid #bfa760;color:#bfa760;font-family:Cinzel,serif;background:#3b2618}.ds-steps li.on::before{background:#bfa760;color:#3b2618}"
+    },
+    {
+      "name": "Menu em pílula",
+      "kind": "nav",
+      "description": "Navegação flutuante com blur.",
+      "html": "<nav class=\"ds-nav\"><a>Início</a><a class=\"on\">Eventos</a><a>Lojas</a></nav>",
+      "css": ".ds-nav{display:inline-flex;gap:.25rem;padding:.4rem;border-radius:999px;background:color-mix(in srgb,#fbf5f1 82%,transparent);backdrop-filter:blur(14px);box-shadow:0 10px 30px -18px color-mix(in srgb,#3b2618 45%,transparent);font:600 .9375rem 'Nunito Sans',sans-serif}.ds-nav a{padding:.5rem .9rem;border-radius:999px;color:#3b2618;cursor:pointer;transition:background .3s}.ds-nav a:hover,.ds-nav a.on{background:#f4e7e2}"
+    },
+    {
+      "name": "Selo dourado",
+      "kind": "custom",
+      "description": "Confirmação de envio, carimbada.",
+      "html": "<svg class=\"ds-seal\" viewBox=\"0 0 64 64\"><circle cx=\"32\" cy=\"32\" r=\"30\" fill=\"#bfa760\"/><circle cx=\"32\" cy=\"32\" r=\"25\" fill=\"none\" stroke=\"#fbf5f1\" stroke-width=\"1.2\" stroke-dasharray=\"2 3\"/><rect x=\"25\" y=\"13\" width=\"14\" height=\"26\" rx=\"7\" fill=\"#fbf5f1\"/><rect x=\"30.5\" y=\"38\" width=\"3\" height=\"10\" rx=\"1.5\" fill=\"#fbf5f1\"/><path d=\"M27.5 26l3.5 3.5 6-7\" fill=\"none\" stroke=\"#bfa760\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "css": ".ds-seal{width:64px;height:64px;transform:rotate(-8deg);animation:ds-stamp .7s cubic-bezier(.22,.8,.24,1) both}@keyframes ds-stamp{0%{opacity:0;transform:scale(1.7) rotate(-20deg)}55%{opacity:1;transform:scale(.9) rotate(-6deg)}100%{transform:scale(1) rotate(-8deg)}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "A Vitrine da Gelateria",
+    "overview": "A página é organizada como o balcão de uma gelateria italiana. O arco do vidro de vitrine enquadra os produtos, e cada seção expõe uma coisa só, com bastante respiro e luz quente. O tom é acolhedor e sofisticado. A paleta vem da embalagem rosa e do cacau, com o dourado do hot stamping como acento. A tipografia de inscrição clássica (Cinzel) assina os títulos, e uma sans humanista e leve (Nunito Sans) conduz a leitura.\n\nOs componentes têm duas camadas. A camada tátil e macia aparece nos botões em pílula, no picolé que inclina no hover e no leve recuo de escala ao clicar. A camada refinada e contida vem das linhas douradas finas, do kicker com traço e do pouco ornamento. A foto e o texto lideram, e a interface fica em segundo plano.\n\nO movimento é raro e significativo. A caixa da abertura se abre, o manifesto acende verso por verso e a vitrine revela as fotos de baixo para cima. O resto entra com revelações curtas na mesma curva.",
+    "keyCharacteristics": [
+      "Arco de vitrine (topo redondo, base reta) como forma assinatura em fotos, no rótulo e no card de delivery.",
+      "Fundo leite rosado, texto cacau e acento dourado usado com parcimônia.",
+      "Cinzel só em títulos e frases curtas. Nunito Sans em todo o resto.",
+      "Superfícies chapadas. A profundidade vem do tom (leite, rose-50, cacau) e não de sombras.",
+      "Uma curva só para tudo (`cubic-bezier(0.22, 0.8, 0.24, 1)`), animando apenas transform, opacity e clip-path."
+    ],
+    "rules": [
+      {
+        "name": "The Hot Stamping Rule",
+        "body": "O dourado é um detalhe, nunca uma superfície grande. Fica em linhas, bolinhas e no botão sobre cacau.",
+        "section": "colors"
+      },
+      {
+        "name": "The No Red-Green Rule",
+        "body": "Vermelho e verde ficam reservados a campanhas sazonais e não entram na home. A única exceção é o tom de erro dos formulários.",
+        "section": "colors"
+      },
+      {
+        "name": "The Choc-on-Rose Rule",
+        "body": "Chocolate sobre rosa tem contraste de cerca de 3,5:1, por isso só aparece em texto grande.",
+        "section": "colors"
+      },
+      {
+        "name": "The Inscription Rule",
+        "body": "Cinzel só em títulos e frases curtas, nunca em parágrafos nem na interface.",
+        "section": "typography"
+      },
+      {
+        "name": "The Logo Is an Image Rule",
+        "body": "O lettering \"Vero Latte\" nunca é recriado com fonte. Usa-se sempre o arquivo do logotipo.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tinted Shadow Rule",
+        "body": "Quando há sombra, ela é cacau a 45–55% com espalhamento negativo, nunca preta.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** use o arco (`999px 999px 4px 4px`) na foto principal de uma seção nova.",
+      "**Do** anime só transform, opacity e clip-path, com `--ease-vero` e os tokens `--duration-fast/base/slow` (0.3/0.7/1.1s). Sempre com uma alternativa para `prefers-reduced-motion`.",
+      "**Do** alterne os fundos (leite, rose-50, cacau) para separar as seções, em vez de usar bordas ou sombras.",
+      "**Do** mantenha títulos em Cinzel com no máximo 20ch e corpo com 42 a 54ch."
+    ],
+    "donts": [
+      "**Don't** use dourado como fundo de seção ou em blocos grandes de texto.",
+      "**Don't** use vermelho ou verde na home.",
+      "**Don't** recrie o logotipo com fonte.",
+      "**Don't** use sombras pretas ou cinza, nem cards genéricos com sombra. O arco substitui o card.",
+      "**Don't** centralize conteúdo além do rótulo da abertura."
+    ]
+  }
+}
