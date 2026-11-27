@@ -1,11 +1,12 @@
 import Image from "next/image";
 import { story } from "@/data/story";
+import { StoryReveal } from "./StoryReveal";
 import { Kicker } from "./ui/Kicker";
 
 export function FounderStory() {
   return (
     <section className="sec story" id="sobre" aria-labelledby="story-t">
-      <div className="wrap story-grid">
+      <StoryReveal>
         <figure className="story-photo">
           <div className="ph">
             <Image
@@ -15,11 +16,11 @@ export function FounderStory() {
             />
           </div>
           <figcaption>
-            <b>{story.person.name}</b>
-            {story.person.role}
+            <span className="story-cap-name">{story.person.name}</span>
+            <span className="story-cap-role">{story.person.role}</span>
           </figcaption>
         </figure>
-        <div>
+        <div className="story-text">
           <Kicker>{story.kicker}</Kicker>
           <h2 id="story-t">{story.title}</h2>
           {story.paragraphs.map((p) => (
@@ -27,12 +28,14 @@ export function FounderStory() {
           ))}
           <blockquote>{story.quote}</blockquote>
           <ul className="facts">
-            {story.facts.map((f) => (
-              <li key={f}>{f}</li>
+            {story.facts.map((f, i) => (
+              <li key={f} style={{ "--i": i } as React.CSSProperties}>
+                {f}
+              </li>
             ))}
           </ul>
         </div>
-      </div>
+      </StoryReveal>
     </section>
   );
 }

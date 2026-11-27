@@ -14,7 +14,7 @@ export const story = {
     "Carpigiani Gelato University, em Bolonha",
     "Produção artesanal em São Paulo",
   ],
-  person: { name: "Mariana Galvão", role: "fundadora da Vero Latte" },
+  person: { name: "Mariana Galvão", role: "Fundadora da Vero Latte" },
   photo: {
     src: marianaImg,
     alt: "Mariana Galvão, fundadora da Vero Latte, sorrindo em sua loja, de dólmã preta",
