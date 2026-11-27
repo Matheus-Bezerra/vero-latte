@@ -6,7 +6,7 @@ import { headquarters, phoneMain, policies, socials, whatsappMain } from "@/data
 import { ExternalLink } from "./ui/ExternalLink";
 import { Reveal } from "./ui/Reveal";
 import { SocialIcon } from "./ui/SocialIcon";
-import { PopsiclePattern } from "./ui/PopsiclePattern";
+import { PopsicleStrip } from "./ui/PopsicleStrip";
 
 export function Footer() {
   return (
@@ -68,7 +68,7 @@ export function Footer() {
         </span>
         <span>{footer.credit}</span>
       </div>
-      <PopsiclePattern className="foot-strip" />
+      <PopsicleStrip className="foot-strip" />
     </footer>
   );
 }
