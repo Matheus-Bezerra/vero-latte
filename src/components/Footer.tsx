@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { logo } from "@/data/images";
 import { footer, site } from "@/data/site";
 import { headquarters, phoneMain, policies, socials, whatsappMain } from "@/data/contacts";
@@ -28,7 +29,7 @@ export function Footer() {
           <ul>
             {footer.nav.map((l) => (
               <li key={l.href}>
-                <a href={l.href}>{l.label}</a>
+                <Link href={l.href}>{l.label}</Link>
               </li>
             ))}
           </ul>
@@ -54,7 +55,7 @@ export function Footer() {
           <ul>
             {policies.map((p) => (
               <li key={p.href}>
-                <ExternalLink href={p.href}>{p.label}</ExternalLink>
+                <Link href={p.href}>{p.label}</Link>
               </li>
             ))}
           </ul>

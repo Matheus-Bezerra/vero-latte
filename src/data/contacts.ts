@@ -38,13 +38,11 @@ export const socials: Social[] = [
 export const policies: Link[] = [
   {
     label: "Entregas e reembolsos",
-    href: `${OFFICIAL_SITE}/entregas-e-reembolsos`,
-    external: true,
+    href: "/entregas-e-reembolsos",
   },
   {
     label: "Política de cookies",
-    href: `${OFFICIAL_SITE}/pol%C3%ADtica-de-cookies`,
-    external: true,
+    href: "/politica-de-cookies",
   },
 ];
 
