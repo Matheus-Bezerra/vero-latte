@@ -5,13 +5,14 @@ import { ContactForm } from "./ContactForm";
 import { NewsletterForm } from "./NewsletterForm";
 import { ExternalLink } from "./ui/ExternalLink";
 import { Kicker } from "./ui/Kicker";
+import { Reveal } from "./ui/Reveal";
 import { SocialIcon } from "./ui/SocialIcon";
 
 export function News() {
   return (
     <section className="sec news" id="contato" aria-labelledby="contato-t">
       <div className="wrap contact-grid">
-        <div>
+        <Reveal>
           <Kicker>{contactSection.kicker}</Kicker>
           <h2 id="contato-t">{contactSection.title}</h2>
           <p>{contactSection.text}</p>
@@ -38,16 +39,20 @@ export function News() {
               </li>
             ))}
           </ul>
-        </div>
-        <ContactForm />
+        </Reveal>
+        <Reveal delay={0.15}>
+          <ContactForm />
+        </Reveal>
       </div>
       <div className="wrap news-grid news-sub">
-        <div>
+        <Reveal>
           <Kicker>{newsletter.kicker}</Kicker>
           <h3 id="news-t">{newsletter.title}</h3>
           <p>{newsletter.text}</p>
-        </div>
-        <NewsletterForm />
+        </Reveal>
+        <Reveal delay={0.15}>
+          <NewsletterForm />
+        </Reveal>
       </div>
     </section>
   );

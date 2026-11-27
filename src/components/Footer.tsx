@@ -4,13 +4,14 @@ import { logo } from "@/data/images";
 import { footer, site } from "@/data/site";
 import { headquarters, phoneMain, policies, socials, whatsappMain } from "@/data/contacts";
 import { ExternalLink } from "./ui/ExternalLink";
+import { Reveal } from "./ui/Reveal";
 import { SocialIcon } from "./ui/SocialIcon";
 import { PopsiclePattern } from "./ui/PopsiclePattern";
 
 export function Footer() {
   return (
     <footer className="footer">
-      <div className="wrap foot-grid">
+      <Reveal className="wrap foot-grid">
         <div className="foot-brand">
           <Image src={logo} alt={site.logoAlt} sizes="150px" />
           <p>{footer.tagline}</p>
@@ -60,7 +61,7 @@ export function Footer() {
             ))}
           </ul>
         </div>
-      </div>
+      </Reveal>
       <div className="wrap foot-bottom">
         <span>
           <strong>{footer.disclaimer}</strong> {footer.rights}
