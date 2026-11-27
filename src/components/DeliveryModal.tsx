@@ -100,7 +100,13 @@ export function DeliveryApps({ apps }: Props) {
           if (e.target === e.currentTarget) close();
         }}
       >
-        <div ref={dialogRef} className="dlv-panel" role="dialog" aria-modal="true" aria-label={label}>
+        <div
+          ref={dialogRef}
+          className="dlv-panel"
+          role="dialog"
+          aria-modal="true"
+          aria-label={label}
+        >
           <header className="dlv-head">
             {app ? <Image src={app.logo} alt="" height={26} sizes="96px" /> : null}
             <button ref={closeRef} type="button" className="menu-btn" onClick={close}>

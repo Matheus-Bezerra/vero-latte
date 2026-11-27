@@ -27,8 +27,16 @@ export function HeroBox() {
   // Sem `preload` (getImageProps não emite <link> e faria baixar as duas); a prioridade
   // vem do fetchPriority. Qualidade 85 = o maior valor liberado em next.config `qualities`.
   const common = { fill: true, sizes: "100vw", quality: 85, fetchPriority: "high" as const };
-  const { props: landscape } = getImageProps({ ...common, src: hero.photo.src, alt: hero.photo.alt });
-  const { props: portrait } = getImageProps({ ...common, src: hero.photoPortrait.src, alt: hero.photoPortrait.alt });
+  const { props: landscape } = getImageProps({
+    ...common,
+    src: hero.photo.src,
+    alt: hero.photo.alt,
+  });
+  const { props: portrait } = getImageProps({
+    ...common,
+    src: hero.photoPortrait.src,
+    alt: hero.photoPortrait.alt,
+  });
 
   const [primary, secondary] = hero.ctas;
 

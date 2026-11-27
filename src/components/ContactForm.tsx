@@ -155,16 +155,24 @@ export function ContactForm() {
       </div>
       <div className="cf-field">
         {label("message", f.message.label, true)}
-        <textarea rows={5} maxLength={MESSAGE_MAX} {...a11y("message", true)} {...register("message")} />
+        <textarea
+          rows={5}
+          maxLength={MESSAGE_MAX}
+          {...a11y("message", true)}
+          {...register("message")}
+        />
         <div className="cf-foot">
           {error("message")}
-          <span className="cf-count">
-            {f.message.counter(msgLen)}
-          </span>
+          <span className="cf-count">{f.message.counter(msgLen)}</span>
         </div>
       </div>
       <div className="cf-actions">
-        <button className="btn btn-choc" type="submit" disabled={isSubmitting} aria-busy={isSubmitting}>
+        <button
+          className="btn btn-choc"
+          type="submit"
+          disabled={isSubmitting}
+          aria-busy={isSubmitting}
+        >
           {isSubmitting ? (
             <>
               <span className="btn-spinner" aria-hidden="true" />

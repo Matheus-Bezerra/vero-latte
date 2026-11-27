@@ -40,7 +40,10 @@ export function Manifesto() {
     const cs = getComputedStyle(track);
     const stageH = stage.offsetHeight;
     // Espaço livre entre o menu e a barra de ações (as mesmas faixas do CSS).
-    const free = vh - (parseFloat(cs.getPropertyValue("--safe-t")) || 0) - (parseFloat(cs.getPropertyValue("--safe-b")) || 0);
+    const free =
+      vh -
+      (parseFloat(cs.getPropertyValue("--safe-t")) || 0) -
+      (parseFloat(cs.getPropertyValue("--safe-b")) || 0);
     // Se o palco não cabe (tela baixa, zoom de 200%), não prende: o manifesto rola
     // normalmente e cada estrofe acende pela própria posição na tela.
     // compara pelo conteúdo (não pelo palco, cujo respiro muda entre os modos) + respiro mínimo
@@ -83,11 +86,7 @@ export function Manifesto() {
 
   return (
     <section className="manifesto" id="manifesto" aria-labelledby="man-t">
-      <div
-        className="man-track"
-        ref={trackRef}
-        style={{ "--beats": beats } as React.CSSProperties}
-      >
+      <div className="man-track" ref={trackRef} style={{ "--beats": beats } as React.CSSProperties}>
         <div className="man-stage" ref={stageRef}>
           <div className="man-inner">
             <h2 className="man-side" id="man-t">

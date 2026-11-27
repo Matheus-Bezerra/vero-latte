@@ -75,7 +75,9 @@ export function NewsletterForm() {
           placeholder={c.placeholder}
           required
           value={value}
-          onChange={(e) => setValue(channel === "whats" ? formatBrMobile(e.target.value) : e.target.value)}
+          onChange={(e) =>
+            setValue(channel === "whats" ? formatBrMobile(e.target.value) : e.target.value)
+          }
           aria-invalid={error ? true : undefined}
           aria-describedby="newsMsg"
         />

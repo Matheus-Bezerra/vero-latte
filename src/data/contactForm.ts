@@ -8,7 +8,12 @@ export const contactSection = {
   directTitle: "Canais diretos",
   socialsTitle: "Siga a Vero Latte",
   direct: [
-    { label: whatsappMain.label, display: whatsappMain.display, href: whatsappMain.href, external: true },
+    {
+      label: whatsappMain.label,
+      display: whatsappMain.display,
+      href: whatsappMain.href,
+      external: true,
+    },
     { label: "Telefone", display: phoneMain.display, href: phoneMain.href, external: false },
   ],
 } as const;

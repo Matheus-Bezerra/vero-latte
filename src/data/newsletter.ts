@@ -27,7 +27,8 @@ export const newsletter = {
   success: {
     title: "Cadastro feito!",
     email: (v: string) => `Você vai receber as novidades da Vero Latte em ${v}.`,
-    whats: (v: string) => `Você vai receber as novidades da Vero Latte no WhatsApp ${v.replace("-", "‑")}.`,
+    whats: (v: string) =>
+      `Você vai receber as novidades da Vero Latte no WhatsApp ${v.replace("-", "‑")}.`,
     again: "Cadastrar outro contato",
   },
 } as const;
