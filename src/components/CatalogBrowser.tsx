@@ -57,7 +57,7 @@ export function CatalogBrowser({ initial = "todos" }: { initial?: Filter }) {
       setOpen(null);
       if (photo) photo.style.viewTransitionName = "cat-photo";
       // o foco volta ao card que abriu (a transição impede o retorno automático do <dialog>)
-      photo?.closest("button")?.focus({ preventScroll: true });
+      photo?.closest(".cat-card")?.querySelector("button")?.focus({ preventScroll: true });
     }).finally(() => {
       if (photo) photo.style.viewTransitionName = "";
     });
@@ -99,16 +99,9 @@ export function CatalogBrowser({ initial = "todos" }: { initial?: Filter }) {
       <ul className="cat-grid" key={filter}>
         {items.map((p, i) => (
           <li key={p.id} style={{ "--i": Math.min(i, STAGGER_CAP) } as CSSProperties}>
-            <button
-              type="button"
-              className="cat-card"
-              aria-haspopup="dialog"
-              onClick={(e) => {
-                const ph = e.currentTarget.querySelector<HTMLElement>(".cat-ph");
-                if (ph) openItem(p, ph);
-                else setOpen(p);
-              }}
-            >
+            {/* O nome é o título do card e o botão fica dentro dele; o ::after do botão
+                cobre o card inteiro, então a área de clique continua sendo o card todo. */}
+            <article className="cat-card">
               <span className="cat-ph">
                 <Image
                   src={p.photo.src}
@@ -118,12 +111,27 @@ export function CatalogBrowser({ initial = "todos" }: { initial?: Filter }) {
                   fetchPriority={i === 0 ? "high" : undefined}
                 />
               </span>
-              <span className="cat-cat">{labelOf(p.category)}</span>
-              <span className="cat-name">{p.name}</span>
-              <span className="cat-cta">
-                {catalogPage.detailsCta} <span aria-hidden="true">→</span>
+              <p className="cat-cat">{labelOf(p.category)}</p>
+              <h2 className="cat-name">
+                <button
+                  type="button"
+                  className="cat-open"
+                  aria-haspopup="dialog"
+                  onClick={(e) => {
+                    const ph = e.currentTarget
+                      .closest(".cat-card")
+                      ?.querySelector<HTMLElement>(".cat-ph");
+                    if (ph) openItem(p, ph);
+                    else setOpen(p);
+                  }}
+                >
+                  {p.name}
+                </button>
+              </h2>
+              <span className="cat-cta" aria-hidden="true">
+                {catalogPage.detailsCta} →
               </span>
-            </button>
+            </article>
           </li>
         ))}
       </ul>

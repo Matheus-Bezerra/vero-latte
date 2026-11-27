@@ -2360,10 +2360,12 @@
     margin-bottom: var(--spacing-5);
   }
   .cat-head h1 {
+    text-wrap: balance;
     font-size: var(--text-2xl);
     color: var(--color-cacau);
   }
   .cat-head p {
+    text-wrap: pretty;
     font-size: var(--text-md);
     line-height: var(--leading-body);
     color: var(--color-stone);
@@ -2399,7 +2401,7 @@
     color: var(--color-leite);
   }
   .cat-filter button:focus-visible,
-  .cat-card:focus-visible {
+  .cat-card:has(.cat-open:focus-visible) {
     outline: 2px solid var(--color-choc);
     outline-offset: 3px;
   }
@@ -2435,17 +2437,34 @@
     }
   }
   .cat-card {
+    position: relative;
     display: grid;
     gap: 0.4rem;
-    width: 100%;
+    color: var(--color-cacau);
+    border-radius: var(--radius-photo);
+    cursor: pointer;
+  }
+  .cat-card p,
+  .cat-card h2 {
+    margin: 0;
+  }
+  .cat-open {
     padding: 0;
     border: 0;
-    background: transparent;
-    color: var(--color-cacau);
-    text-align: left;
+    background: none;
+    color: inherit;
     font: inherit;
+    text-align: inherit;
     cursor: pointer;
-    border-radius: var(--radius-photo);
+  }
+  /* estica a área de clique do botão para o card inteiro */
+  .cat-open::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+  }
+  .cat-open:focus-visible {
+    outline: none;
   }
   .cat-ph {
     display: block;
@@ -2468,6 +2487,7 @@
     color: var(--color-choc);
   }
   .cat-name {
+    text-wrap: balance;
     font-family: var(--font-display);
     font-size: var(--text-lg);
     line-height: var(--leading-title);
@@ -2553,6 +2573,7 @@
     color: var(--color-choc);
   }
   .cat-modal h2 {
+    text-wrap: balance;
     font-size: var(--text-xl);
     line-height: var(--leading-title);
   }
@@ -2566,6 +2587,7 @@
     margin-bottom: 0.3rem;
   }
   .cat-modal-body p {
+    text-wrap: pretty;
     font-size: var(--text-sm);
     line-height: var(--leading-body);
     color: var(--color-stone);
