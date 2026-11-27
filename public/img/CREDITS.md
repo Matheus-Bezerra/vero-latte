@@ -27,6 +27,8 @@ máximo 2400 px no lado maior, salva em JPEG com qualidade 85 e remove os metada
 | `historia-mariana-galvao.jpg` | https://static.wixstatic.com/media/d72874_8c20db7632034058b46295a92a0ca80c~mv2.jpeg | Home | Mariana Galvão na loja |
 | `eventos-carrinho.jpg` | https://static.wixstatic.com/media/d72874_984c520eb1f3437a89d63aa1c6fe35d8~mv2.jpeg | /eventos | Carrinho refrigerado |
 | `eventos-bandeja-gelo-seco.jpg` | https://static.wixstatic.com/media/d72874_61b5b9634f2845f1813928be62fc464c~mv2.jpg | Home | Bandeja sobre gelo seco. Usada em Eventos. |
+| `ifood-logo.svg` | https://commons.wikimedia.org/wiki/File:IFood_logo.svg | Wikimedia Commons | Logotipo do iFood. Marca registrada do iFood, usada só para identificar o app de delivery neste conceito. |
+| `rappi-logo.svg` | https://commons.wikimedia.org/wiki/File:Rappi_logo.svg | Wikimedia Commons | Logotipo do Rappi. Marca registrada do Rappi, mesmo uso. |
 | `loja-campo-belo.jpg` | https://static.wixstatic.com/media/d72874_aa9ac2dd0de94a3ab6f8d06648eb2b2d~mv2.jpg | /lojas | Fachada. A legenda gravada na base é escondida por CSS (quadro 16:9, alinhado ao topo). |
 | `loja-cidade-jardim.jpg` | https://static.wixstatic.com/media/d72874_a930852cc9d84a1fbaa9673d0f24fae8~mv2.jpg | /lojas | Quiosque. Mesmo tratamento da legenda. |
 

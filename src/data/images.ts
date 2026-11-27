@@ -18,3 +18,5 @@ export { default as caixaRosaRetratoImg } from "../../public/img/hero-caixa-rosa
 export { default as bandejaImg } from "../../public/img/eventos-bandeja-gelo-seco.jpg";
 export { default as campoBeloImg } from "../../public/img/loja-campo-belo.jpg";
 export { default as cidadeJardimImg } from "../../public/img/loja-cidade-jardim.jpg";
+export { default as ifoodLogo } from "../../public/img/ifood-logo.svg";
+export { default as rappiLogo } from "../../public/img/rappi-logo.svg";

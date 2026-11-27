@@ -44,10 +44,20 @@ export type Store = {
   actions: (Link & { variant: "choc" | "line" })[];
 };
 
-export type DeliveryApp = {
-  name: string;
-  units: string;
+export type DeliveryOption = {
+  /** Nome da unidade, mostrado no botão de escolha. */
+  unit: string;
+  /** Endereço do cardápio do app para essa unidade. */
   href: string;
+};
+
+export type DeliveryApp = {
+  id: "ifood" | "rappi";
+  name: string;
+  logo: StaticImageData;
+  logoAlt: string;
+  /** Uma opção abre direto; duas ou mais pedem a escolha da unidade. */
+  options: DeliveryOption[];
 };
 
 export type Product = {

@@ -1,4 +1,4 @@
-import { OFFICIAL_SITE } from "./site";
+import { ifoodLogo, rappiLogo } from "./images";
 import type { DeliveryApp, Link, Social } from "./types";
 
 /** Horário único de todas as unidades (decisão confirmada, HANDOFF §1). */
@@ -46,21 +46,38 @@ export const policies: Link[] = [
   },
 ];
 
-// TODO: pendência aberta (HANDOFF §12). Trocar pelos links diretos de iFood e Rappi
-// de cada unidade. Hoje os dois apontam para a página oficial /delivery.
-const DELIVERY_PLACEHOLDER = `${OFFICIAL_SITE}/delivery`;
-
 export const delivery = {
   title: "Delivery",
   text: "Escolha o app e a unidade mais perto de você.",
   apps: [
-    { name: "iFood", units: "Campo Belo e Cidade Jardim", href: DELIVERY_PLACEHOLDER },
-    { name: "Rappi", units: "Campo Belo", href: DELIVERY_PLACEHOLDER },
+    {
+      id: "ifood",
+      name: "iFood",
+      logo: ifoodLogo,
+      logoAlt: "iFood",
+      options: [
+        {
+          unit: "Campo Belo",
+          href: "https://www.ifood.com.br/delivery/sao-paulo-sp/vero-latte-gelato---campo-belo-campo-belo/38029cc7-842c-4544-bfc4-d9c802b839b0",
+        },
+        {
+          unit: "Cidade Jardim",
+          href: "https://www.ifood.com.br/delivery/sao-paulo-sp/vero-lattegelato---cidade-jardim-cidade-jardim/25aa9907-1df9-4b74-b01c-fcaae4b19883",
+        },
+      ],
+    },
+    {
+      id: "rappi",
+      name: "Rappi",
+      logo: rappiLogo,
+      logoAlt: "Rappi",
+      options: [
+        { unit: "Campo Belo", href: "https://www.rappi.com.br/restaurantes/900006271-vero-latte" },
+      ],
+    },
   ] satisfies DeliveryApp[],
-  /** Aviso mostrado com a marcação dourada de texto provisório. */
-  pending: {
-    text: "Links diretos para cada app a confirmar.",
-    title:
-      "Os links apontam para a página oficial de delivery; trocar pelos links diretos de cada app",
+  modal: {
+    chooseUnit: "Escolha a unidade",
+    close: "Fechar",
   },
 } as const;
