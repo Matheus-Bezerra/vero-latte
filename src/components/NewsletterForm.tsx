@@ -2,21 +2,44 @@
 
 import { useState, type FormEvent } from "react";
 import { newsletter, type NewsChannel } from "@/data/newsletter";
+import { formatBrMobile, isBrMobile } from "@/lib/phone";
+import { FormSuccess } from "./ui/FormSuccess";
 
-/** Demonstração: valida e responde, mas nada é enviado. */
+/** Demonstração: valida, simula o envio e confirma. Nada sai do navegador. */
 export function NewsletterForm() {
   const [channel, setChannel] = useState<NewsChannel>("email");
   const [value, setValue] = useState("");
-  const [msg, setMsg] = useState<{ text: string; error: boolean } | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [sending, setSending] = useState(false);
+  const [done, setDone] = useState<{ channel: NewsChannel; value: string } | null>(null);
   const c = newsletter.channels[channel];
 
-  const onSubmit = (e: FormEvent) => {
+  const onSubmit = async (e: FormEvent) => {
     e.preventDefault();
     const v = value.trim();
-    const ok = channel === "whats" ? v.replace(/\D/g, "").length >= 10 : /^\S+@\S+\.\S+$/.test(v);
-    setMsg({ text: ok ? newsletter.success : c.error, error: !ok });
-    if (ok) setValue("");
+    const ok = channel === "whats" ? isBrMobile(v) : /^\S+@\S+\.\S+$/.test(v);
+    if (!ok) {
+      setError(c.error);
+      return;
+    }
+    setError(null);
+    setSending(true);
+    await new Promise((r) => setTimeout(r, 800));
+    setSending(false);
+    setDone({ channel, value: v });
+    setValue("");
   };
+
+  if (done) {
+    return (
+      <FormSuccess
+        title={newsletter.success.title}
+        text={newsletter.success[done.channel](done.value)}
+        actionLabel={newsletter.success.again}
+        onAction={() => setDone(null)}
+      />
+    );
+  }
 
   return (
     <form className="form" onSubmit={onSubmit} noValidate>
@@ -32,7 +55,7 @@ export function NewsletterForm() {
               onChange={() => {
                 setChannel(key);
                 setValue("");
-                setMsg(null);
+                setError(null);
               }}
             />
             <span>{newsletter.channels[key].option}</span>
@@ -48,19 +71,20 @@ export function NewsletterForm() {
           type={c.type}
           autoComplete={c.autoComplete}
           inputMode={channel === "whats" ? "tel" : "email"}
+          maxLength={channel === "whats" ? 15 : undefined}
           placeholder={c.placeholder}
           required
           value={value}
-          onChange={(e) => setValue(e.target.value)}
-          aria-invalid={msg?.error || undefined}
+          onChange={(e) => setValue(channel === "whats" ? formatBrMobile(e.target.value) : e.target.value)}
+          aria-invalid={error ? true : undefined}
           aria-describedby="newsMsg"
         />
-        <button className="btn btn-choc" type="submit">
-          {newsletter.submit}
+        <button className="btn btn-choc" type="submit" disabled={sending} aria-busy={sending}>
+          {sending ? newsletter.sending : newsletter.submit}
         </button>
       </div>
-      <p className={`form-msg ${msg?.error ? "err" : ""}`} id="newsMsg" role="status">
-        {msg?.text}
+      <p className={`form-msg ${error ? "err" : ""}`} id="newsMsg" role="status">
+        {error}
       </p>
     </form>
   );

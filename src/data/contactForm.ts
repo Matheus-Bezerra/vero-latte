@@ -26,10 +26,10 @@ export const contactForm = {
       error: "Digite um e-mail válido, por exemplo nome@email.com.",
     },
     phone: {
-      label: "Telefone",
+      label: "Celular",
       autoComplete: "tel",
       placeholder: "(11) 90000-0000",
-      error: "Digite um telefone com DDD, por exemplo (11) 90000-0000.",
+      error: "Digite um celular com DDD, por exemplo (11) 90000-0000.",
     },
     subject: {
       label: "Assunto",
@@ -50,5 +50,10 @@ export const contactForm = {
   },
   submit: "Enviar mensagem",
   sending: "Enviando…",
-  success: "Mensagem enviada. Retornaremos em breve. (Demonstração: nenhum dado foi enviado.)",
+  success: {
+    title: "Mensagem enviada!",
+    text: "Obrigado pelo contato. A equipe da Vero Latte retorna em breve.",
+    detailLabels: { name: "Nome", email: "Retorno por e-mail", subject: "Assunto" },
+    again: "Enviar outra mensagem",
+  },
 } as const;

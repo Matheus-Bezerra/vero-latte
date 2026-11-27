@@ -1,10 +1,11 @@
-// Formulário de demonstração: nada é enviado (sem backend).
+// Formulário de demonstração: o cadastro é simulado (sem backend).
 export const newsletter = {
   kicker: "Novidades",
   title: "Seja o primeiro a provar os lançamentos",
   text: "Receba novos sabores e promoções por WhatsApp ou e-mail.",
   groupLabel: "Como prefere receber",
   submit: "Cadastrar",
+  sending: "Cadastrando…",
   channels: {
     email: {
       option: "E-mail",
@@ -20,10 +21,15 @@ export const newsletter = {
       type: "tel",
       autoComplete: "tel",
       placeholder: "(11) 90000-0000",
-      error: "Digite um WhatsApp com DDD, por exemplo (11) 90000-0000.",
+      error: "Digite um celular com DDD, por exemplo (11) 90000-0000.",
     },
   },
-  success: "Cadastro feito. (Demonstração: nenhum dado foi enviado.)",
+  success: {
+    title: "Cadastro feito!",
+    email: (v: string) => `Você vai receber as novidades da Vero Latte em ${v}.`,
+    whats: (v: string) => `Você vai receber as novidades da Vero Latte no WhatsApp ${v.replace("-", "‑")}.`,
+    again: "Cadastrar outro contato",
+  },
 } as const;
 
 export type NewsChannel = keyof typeof newsletter.channels;

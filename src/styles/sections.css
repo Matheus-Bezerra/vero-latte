@@ -1509,6 +1509,89 @@
   .news .form-msg.err {
     color: var(--color-erro);
   }
+  .form-success {
+    display: grid;
+    justify-items: start;
+    gap: 0.6rem;
+    padding: 1.4rem;
+    border-radius: var(--radius-card-lg);
+    background: var(--color-leite);
+    border: 1.5px solid color-mix(in srgb, var(--color-choc) 25%, transparent);
+    color: var(--color-cacau);
+  }
+  .form-success h3 {
+    font-size: 1.4rem;
+  }
+  .form-success p {
+    color: var(--color-stone);
+    overflow-wrap: anywhere;
+  }
+  .form-success:focus {
+    outline: none;
+  }
+  .form-success:focus-visible {
+    outline: 2px solid var(--color-choc);
+    outline-offset: 3px;
+  }
+  .form-success-details {
+    display: grid;
+    gap: 0.4rem;
+    width: 100%;
+    margin: 0.2rem 0 0.4rem;
+    padding: 0.9rem 0;
+    border-block: 1px solid color-mix(in srgb, var(--color-choc) 18%, transparent);
+  }
+  .form-success-details div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.75rem;
+    font-size: var(--text-sm);
+  }
+  .form-success-details dt {
+    min-width: 9.5rem;
+    color: var(--color-stone);
+  }
+  .form-success-details dd {
+    margin: 0;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+  }
+  .btn-spinner {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-right: 0.55em;
+    vertical-align: -0.15em;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .btn-spinner {
+      animation: btn-spin 0.7s linear infinite;
+    }
+    @keyframes btn-spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+  .form-success-icon {
+    width: 48px;
+    height: 48px;
+    color: var(--color-choc);
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .form-success {
+      animation: form-success-in 0.5s var(--ease-vero) both;
+    }
+    @keyframes form-success-in {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+    }
+  }
   /* Contato: formulário acima das novidades. */
   .contact-grid {
     display: grid;

@@ -1,10 +1,12 @@
 "use client";
 
-import { useId } from "react";
+import { useId, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { contactForm, MESSAGE_MAX } from "@/data/contactForm";
+import { formatBrMobile, isBrMobile } from "@/lib/phone";
+import { FormSuccess } from "./ui/FormSuccess";
 
 const f = contactForm.fields;
 const subjects = f.subject.options.map((o) => o.value) as [string, ...string[]];
@@ -15,7 +17,7 @@ const schema = z.object({
   phone: z
     .string()
     .trim()
-    .refine((v) => v === "" || v.replace(/\D/g, "").length >= 10, f.phone.error),
+    .refine((v) => v === "" || isBrMobile(v), f.phone.error),
   subject: z.enum(subjects, { error: f.subject.error }),
   message: z.string().trim().min(1, f.message.error).max(MESSAGE_MAX, f.message.tooLong),
 });
@@ -33,16 +35,19 @@ export function ContactForm() {
     handleSubmit,
     reset,
     watch,
-    formState: { errors, isSubmitting, isSubmitSuccessful },
+    formState: { errors, isSubmitting },
   } = useForm<Values>({
     resolver: zodResolver(schema),
     mode: "onTouched",
     defaultValues: { name: "", email: "", phone: "", subject: subjects[0], message: "" },
   });
 
-  const onSubmit = async () => {
+  const [sent, setSent] = useState<Values | null>(null);
+
+  const onSubmit = async (values: Values) => {
     await fakeSend();
-    reset(undefined, { keepIsSubmitSuccessful: true });
+    setSent(values);
+    reset();
   };
 
   const ids = (k: Field) => ({ input: `${uid}-${k}`, err: `${uid}-${k}-err` });
@@ -79,6 +84,24 @@ export function ContactForm() {
 
   const msgLen = watch("message")?.length ?? 0;
 
+  if (sent) {
+    const l = contactForm.success.detailLabels;
+    const subject = f.subject.options.find((o) => o.value === sent.subject)?.label ?? sent.subject;
+    return (
+      <FormSuccess
+        title={contactForm.success.title}
+        text={contactForm.success.text}
+        details={[
+          [l.name, sent.name],
+          [l.email, sent.email],
+          [l.subject, subject],
+        ]}
+        actionLabel={contactForm.success.again}
+        onAction={() => setSent(null)}
+      />
+    );
+  }
+
   return (
     <form className="contact-form" onSubmit={handleSubmit(onSubmit)} noValidate>
       <div className="cf-row">
@@ -108,8 +131,13 @@ export function ContactForm() {
             inputMode="tel"
             autoComplete={f.phone.autoComplete}
             placeholder={f.phone.placeholder}
+            maxLength={15}
             {...a11y("phone", false)}
-            {...register("phone")}
+            {...register("phone", {
+              onChange: (e) => {
+                e.target.value = formatBrMobile(e.target.value);
+              },
+            })}
           />
           {error("phone")}
         </div>
@@ -137,11 +165,15 @@ export function ContactForm() {
       </div>
       <div className="cf-actions">
         <button className="btn btn-choc" type="submit" disabled={isSubmitting} aria-busy={isSubmitting}>
-          {isSubmitting ? contactForm.sending : contactForm.submit}
+          {isSubmitting ? (
+            <>
+              <span className="btn-spinner" aria-hidden="true" />
+              {contactForm.sending}
+            </>
+          ) : (
+            contactForm.submit
+          )}
         </button>
-        <p className="form-msg" role="status">
-          {isSubmitSuccessful && !isSubmitting ? contactForm.success : ""}
-        </p>
       </div>
     </form>
   );
