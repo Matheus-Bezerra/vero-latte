@@ -2492,6 +2492,12 @@
     font-size: var(--text-lg);
     line-height: var(--leading-title);
   }
+  /* duas colunas no celular: um passo abaixo na escala para o nome não passar de 3 linhas */
+  @media (max-width: 640px) {
+    .cat-name {
+      font-size: var(--text-md);
+    }
+  }
   .cat-cta {
     font-size: var(--text-sm);
     font-weight: 600;

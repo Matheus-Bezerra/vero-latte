@@ -375,7 +375,7 @@ export const catalog: CatalogItem[] = [
   {
     id: "presente-4-latas-pequenas",
     category: "presentes",
-    name: "Caixa de presente · 4 latas pequenas de bombons",
+    name: "Caixa de presente\u00a0· 4 latas pequenas de bombons",
     description:
       "Caixa de presente especial com paredes duplas e fechamento por elástico contendo 4 latas de bombons de gelato com 4 bombons em cada, com sabores a serem definidos.",
     photo: {
@@ -397,7 +397,7 @@ export const catalog: CatalogItem[] = [
   {
     id: "presente-4-latas-grandes",
     category: "presentes",
-    name: "Caixa de presente · 4 latas grandes de bombons",
+    name: "Caixa de presente\u00a0· 4 latas grandes de bombons",
     description:
       "Caixa de presente especial com paredes duplas e fechamento por elástico contendo 4 latas de bombons de gelato com 8 bombons em cada, com sabores a serem definidos.",
     photo: {
@@ -408,7 +408,7 @@ export const catalog: CatalogItem[] = [
   {
     id: "presente-12-palitos",
     category: "presentes",
-    name: "Caixa de presente · 12 gelatos no palito",
+    name: "Caixa de presente\u00a0· 12 gelatos no palito",
     description:
       "Caixa de presente especial com paredes duplas e fechamento por elástico contendo 12 gelatos no palito embalados individualmente com sabores a serem definidos.",
     notes: ["Contém aproximadamente 549g."],
