@@ -4,7 +4,6 @@ import Image from "next/image";
 import { useLayoutEffect, useRef } from "react";
 import { catalogPage } from "@/data/catalog";
 import type { CatalogItem } from "@/data/types";
-import { ExternalLink } from "./ui/ExternalLink";
 
 /** Mesmo `sizes` no card e no modal: a foto do modal já está em cache quando a transição captura. */
 export const CATALOG_PHOTO_SIZES = "(max-width: 640px) 50vw, (max-width: 860px) 100vw, 400px";
@@ -12,8 +11,6 @@ export const CATALOG_PHOTO_SIZES = "(max-width: 640px) 50vw, (max-width: 860px) 
 type Props = {
   item: CatalogItem | null;
   categoryLabel?: string;
-  /** Página da categoria no site oficial, mostrada no pé do modal. */
-  officialHref?: string;
   /** Pedido de fechar (botão, Esc, clique fora). O pai anima e então zera `item`. */
   onRequestClose: () => void;
 };
@@ -23,7 +20,7 @@ type Props = {
  * e o navegador devolve o foco ao card que abriu. Abrir e fechar seguem `item`, de forma
  * síncrona (layout effect), para caber dentro de uma View Transition do pai.
  */
-export function ProductModal({ item, categoryLabel, officialHref, onRequestClose }: Props) {
+export function ProductModal({ item, categoryLabel, onRequestClose }: Props) {
   const ref = useRef<HTMLDialogElement>(null);
   const { modal } = catalogPage;
 
@@ -97,13 +94,6 @@ export function ProductModal({ item, categoryLabel, officialHref, onRequestClose
                 <h3 id={`${titleId}-alg`}>{modal.allergens}</h3>
                 <p>{item.allergens}</p>
               </section>
-            ) : null}
-            {officialHref && categoryLabel ? (
-              <p className="cat-modal-foot">
-                <ExternalLink href={officialHref}>
-                  {modal.official(categoryLabel)} <span aria-hidden="true">↗</span>
-                </ExternalLink>
-              </p>
             ) : null}
           </div>
         </div>

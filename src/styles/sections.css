@@ -2602,20 +2602,6 @@
     font-size: var(--text-md);
     color: var(--color-cacau);
   }
-  /* o link para o site oficial fica no pé do painel, mesmo com pouco texto */
-  .cat-modal-body .cat-modal-foot {
-    margin-top: auto;
-    padding-top: 1rem;
-    border-top: 1px solid color-mix(in srgb, var(--color-choc) 14%, transparent);
-  }
-  .cat-modal-foot a {
-    color: var(--color-choc);
-    font-weight: 600;
-    text-underline-offset: 3px;
-  }
-  .cat-modal-foot a:hover {
-    color: var(--color-cacau);
-  }
   .cat-modal-body .cat-modal-note {
     padding: 0.6rem 0.9rem;
     border-radius: var(--radius-card);

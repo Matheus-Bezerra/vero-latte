@@ -139,9 +139,6 @@ export function CatalogBrowser({ initial = "todos" }: { initial?: Filter }) {
       <ProductModal
         item={open}
         categoryLabel={open ? labelOf(open.category) : undefined}
-        officialHref={
-          open ? catalogCategories.find((c) => c.id === open.category)?.officialHref : undefined
-        }
         onRequestClose={closeItem}
       />
     </>

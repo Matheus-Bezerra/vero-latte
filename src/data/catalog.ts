@@ -23,8 +23,6 @@ export const catalogPage = {
     close: "Fechar",
     ingredients: "Ingredientes",
     allergens: "Alergênicos",
-    /** Rodapé do modal, ex.: "Ver Bombons no site oficial". */
-    official: (category: string) => `Ver ${category} no site oficial`,
   },
   source: {
     intro: "Textos e fotos reproduzidos do site oficial:",
@@ -37,12 +35,12 @@ export const catalogPage = {
 } as const;
 
 /** Ordem dos filtros. O rótulo segue o nome da categoria na home. */
-export const catalogCategories: { id: CatalogCategoryId; label: string; officialHref: string }[] = [
-  { id: "palito", label: "Gelato no Palito", officialHref: `${OFFICIAL_SITE}/gelatonopalito` },
-  { id: "bombons", label: "Bombons", officialHref: `${OFFICIAL_SITE}/bombons` },
-  { id: "gran-gelato", label: "Gran Gelato", officialHref: `${OFFICIAL_SITE}/grangelato` },
-  { id: "massa", label: "Gelato Massa", officialHref: `${OFFICIAL_SITE}/gelatomassa` },
-  { id: "presentes", label: "Presentes", officialHref: `${OFFICIAL_SITE}/presentes` },
+export const catalogCategories: { id: CatalogCategoryId; label: string }[] = [
+  { id: "palito", label: "Gelato no Palito" },
+  { id: "bombons", label: "Bombons" },
+  { id: "gran-gelato", label: "Gran Gelato" },
+  { id: "massa", label: "Gelato Massa" },
+  { id: "presentes", label: "Presentes" },
 ];
 
 export function isCatalogCategory(value: unknown): value is CatalogCategoryId {
