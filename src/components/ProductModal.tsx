@@ -40,6 +40,15 @@ export function ProductModal({ item, categoryLabel, officialHref, onRequestClose
     }
   }, [item]);
 
+  // Saindo da página com o modal aberto (voltar do navegador, link), a trava de rolagem
+  // não pode ir junto para a próxima página.
+  useLayoutEffect(
+    () => () => {
+      document.documentElement.style.removeProperty("overflow");
+    },
+    [],
+  );
+
   const titleId = item ? `cat-modal-${item.id}` : undefined;
 
   return (
