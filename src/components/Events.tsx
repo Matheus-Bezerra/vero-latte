@@ -30,11 +30,8 @@ export function Events() {
           <div>
             <EventSteps steps={events.steps} />
             <div className="ev-cta">
-              <Button href={events.primary.href} variant="gold" external>
+              <Button href={events.primary.href} variant="gold">
                 {events.primary.label}
-              </Button>
-              <Button href={events.secondary.href} variant="line">
-                {events.secondary.label}
               </Button>
             </div>
           </div>

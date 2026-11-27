@@ -1,4 +1,3 @@
-import { OFFICIAL_SITE } from "./site";
 import { bandejaImg, carrinhoImg } from "./images";
 import type { EventStep, Link, Photo } from "./types";
 
@@ -31,8 +30,6 @@ export const events = {
   ] satisfies EventStep[],
   primary: {
     label: "Planejar meu evento",
-    href: `${OFFICIAL_SITE}/eventos`,
-    external: true,
+    href: "#contato",
   } satisfies Link,
-  secondary: { label: "Falar com a equipe", href: "#contato" } satisfies Link,
 } as const;
