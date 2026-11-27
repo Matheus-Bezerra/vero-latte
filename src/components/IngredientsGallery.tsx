@@ -10,8 +10,8 @@ export type GalleryControls = { prev: string; next: string; goTo: string };
 
 const DESKTOP = "(min-width: 861px)";
 const DRAG_THRESHOLD = 60;
-/** Pausa no fim do trilho (em vh): a última foto fica inteira antes de a seção subir. Igual ao `+ 40svh` do CSS. */
-const HOLD_VH = 0.4;
+/** Pausa no fim do trilho (em vh): a última foto fica inteira antes de a seção subir. Igual ao `+ 20svh` do CSS. */
+const HOLD_VH = 0.2;
 const pad = (n: number) => String(n).padStart(2, "0");
 
 function Chevron({ flip }: { flip?: boolean }) {
