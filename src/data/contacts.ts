@@ -4,10 +4,17 @@ import type { DeliveryApp, Link, Social } from "./types";
 /** Horário único de todas as unidades (decisão confirmada, HANDOFF §1). */
 export const hours = ["Seg. a sáb., 10h às 20h", "Dom., 11h às 17h"] as const;
 
+/** Link do WhatsApp com a mensagem já escrita, avisando que o contato veio do site. */
+const whatsappLink = (number: string, message: string) =>
+  `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
+
 export const whatsappMain = {
   label: "WhatsApp",
   display: "(11) 95065-7666",
-  href: "https://wa.me/5511950657666",
+  href: whatsappLink(
+    "5511950657666",
+    "Olá, Vero Latte! Vim pelo site e gostaria de mais informações.",
+  ),
 } as const;
 
 export const phoneMain = {
@@ -17,7 +24,10 @@ export const phoneMain = {
 
 export const whatsappCidadeJardim = {
   display: "(11) 91415-7731",
-  href: "https://wa.me/5511914157731",
+  href: whatsappLink(
+    "5511914157731",
+    "Olá, Vero Latte Cidade Jardim! Vim pelo site e gostaria de mais informações.",
+  ),
 } as const;
 
 export const headquarters = {
