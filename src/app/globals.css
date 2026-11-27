@@ -58,6 +58,9 @@
 
   /* movimento */
   --ease-vero: cubic-bezier(0.22, 0.8, 0.24, 1);
+  --duration-fast: 0.3s;
+  --duration-base: 0.7s;
+  --duration-slow: 1.1s;
 
   /* faixas do HANDOFF, seção 9 */
   --breakpoint-*: initial;

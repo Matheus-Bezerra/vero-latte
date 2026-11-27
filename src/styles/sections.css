@@ -1175,6 +1175,115 @@
     color: color-mix(in srgb, var(--color-leite) 72%, transparent);
     max-width: 40ch;
   }
+
+  /* passos acendem quando a linha dourada chega na bolinha (data-on, via JS) */
+  @media (prefers-reduced-motion: no-preference) {
+    .steps[data-live] li {
+      opacity: 0.38;
+      transition: opacity var(--duration-base) var(--ease-vero);
+    }
+    .steps[data-live] li > * {
+      transform: translateY(10px);
+      transition: transform var(--duration-base) var(--ease-vero);
+    }
+    .steps[data-live] li > p {
+      transition-delay: 0.08s;
+    }
+    .steps[data-live] li[data-on="1"] {
+      opacity: 1;
+    }
+    .steps[data-live] li[data-on="1"] > * {
+      transform: none;
+    }
+    .steps li::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: -4px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1.5px solid var(--color-gold);
+      opacity: 0;
+      pointer-events: none;
+    }
+    .steps[data-live] li::before {
+      transition:
+        background-color var(--duration-base) var(--ease-vero),
+        color var(--duration-base) var(--ease-vero);
+    }
+    .steps[data-live] li[data-on="1"]::before {
+      background: var(--color-gold);
+      color: var(--color-cacau);
+      animation: step-pop 0.7s var(--ease-vero);
+    }
+    .steps[data-live] li[data-on="1"]::after {
+      animation: step-ring 1s var(--ease-vero);
+    }
+  }
+  @keyframes step-pop {
+    0% {
+      transform: scale(0.85);
+    }
+    55% {
+      transform: scale(1.18);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes step-ring {
+    from {
+      transform: scale(1);
+      opacity: 0.7;
+    }
+    to {
+      transform: scale(1.9);
+      opacity: 0;
+    }
+  }
+
+  .stores-grid > [data-rv-kind] {
+    display: grid;
+  }
+
+  /* aviso de conceito: entra suave no carregamento */
+  @media (prefers-reduced-motion: no-preference) {
+    .notice {
+      animation: notice-in var(--duration-base) var(--ease-vero) both;
+    }
+  }
+  @keyframes notice-in {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+  }
+
+  /* =========================================================
+     REVEAL GENÉRICO (componente Reveal, data-rv via useInView)
+     ========================================================= */
+  @media (prefers-reduced-motion: no-preference) {
+    [data-rv-kind="up"] {
+      transition:
+        opacity var(--duration-slow) var(--ease-vero) calc(var(--d, 0) * 1s),
+        transform var(--duration-slow) var(--ease-vero) calc(var(--d, 0) * 1s);
+    }
+    [data-rv-kind="up"][data-rv="pending"] {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    /* o recorte fica na imagem: clip-path no contêiner zeraria a área observada pelo IO */
+    [data-rv-kind="arch"] img {
+      transition:
+        clip-path var(--duration-slow) var(--ease-vero) calc(var(--d, 0) * 1s),
+        transform 1.4s var(--ease-vero) calc(var(--d, 0) * 1s);
+    }
+    [data-rv-kind="arch"][data-rv="pending"] img {
+      clip-path: inset(100% 0 0 0);
+      transform: scale(1.18);
+    }
+  }
   .ev-cta {
     display: flex;
     flex-wrap: wrap;
