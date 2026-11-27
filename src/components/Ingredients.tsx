@@ -21,7 +21,11 @@ export function Ingredients() {
                 ))}
               </dl>
             </div>
-            <IngredientsGallery items={gallery} label={ingredients.galleryLabel} />
+            <IngredientsGallery
+              items={gallery}
+              label={ingredients.galleryLabel}
+              controls={ingredients.controls}
+            />
           </div>
         </div>
       </div>

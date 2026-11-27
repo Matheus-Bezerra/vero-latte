@@ -4,6 +4,11 @@ import type { GalleryItem } from "./types";
 export const ingredients = {
   kicker: "Ingredientes selecionados",
   galleryLabel: "Fotos de ingredientes e receitas da Vero Latte",
+  controls: {
+    prev: "Foto anterior",
+    next: "Próxima foto",
+    goTo: "Ir para a foto",
+  },
   title: "O cuidado começa antes do palito",
   text: "Cacau escolhido entre as melhores regiões do mundo. Frutas frescas e da estação, de produtores locais. E cada receita feita de forma artesanal.",
   list: [
