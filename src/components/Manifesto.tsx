@@ -7,7 +7,7 @@ import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 
 const lineCount = manifesto.stanzas.reduce((n, s) => n + s.length, 0);
 
-/** Manifesto que acende verso a verso conforme a rolagem. */
+/** Manifesto preenchido verso a verso (máscara) conforme a rolagem. */
 export function Manifesto() {
   const trackRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLParagraphElement>(null);
@@ -20,9 +20,13 @@ export function Manifesto() {
     const r = track.getBoundingClientRect();
     const mp = clamp(-r.top / (track.offsetHeight - vh));
     track.style.setProperty("--mp", mp.toFixed(3));
-    const n = Math.floor(mp * (lineCount + 1.2));
-    text.querySelectorAll(".ln").forEach((l, i) => l.classList.toggle("on", reduce || i < n));
-    text.querySelector(".last")?.classList.toggle("on", reduce || n > lineCount);
+    const v = mp * (lineCount + 1.2);
+    text.querySelectorAll<HTMLElement>(".ln").forEach((l, i) => {
+      // preenchimento contínuo do verso, lido pelo clip-path
+      l.style.setProperty("--p", reduce ? "1" : clamp(v - i).toFixed(3));
+    });
+    const last = text.querySelector<HTMLElement>(".last");
+    last?.style.setProperty("--p", reduce ? "1" : clamp(v - lineCount).toFixed(3));
   });
 
   return (
@@ -43,12 +47,16 @@ export function Manifesto() {
                   {stanza.map((line, i) => (
                     <span key={line}>
                       {i > 0 && " "}
-                      <span className="ln">{line}</span>
+                      <span className="ln" data-text={line}>
+                        {line}
+                      </span>
                     </span>
                   ))}
                 </span>
               ))}
-              <span className="last">{manifesto.closing}</span>
+              <span className="last" data-text={manifesto.closing}>
+                {manifesto.closing}
+              </span>
             </p>
           </div>
           <div className="man-progress" aria-hidden="true">

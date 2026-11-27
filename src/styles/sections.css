@@ -865,23 +865,46 @@
     display: block;
     margin-bottom: 0.55em;
   }
-  /* versos ainda não lidos: 3:1 sobre o rosa (AA para texto grande) */
-  .man-text .ln {
+  /* verso: base apagada (3:1 sobre o rosa, AA para texto grande) + camada escura
+     revelada da esquerda para a direita via clip-path, enquanto o verso sobe */
+  .man-text .ln,
+  .man-text .last {
+    position: relative;
     color: color-mix(in srgb, var(--color-cacau) 62%, var(--color-rose));
-    transition: color 0.5s var(--ease-vero);
+    transform: translateY(calc((1 - var(--p, 0)) * 0.4em));
   }
-  .man-text .ln.on {
+  .man-text .ln {
+    display: inline-block;
+  }
+  .man-text .ln::after,
+  .man-text .last::after {
+    content: attr(data-text);
+    content: attr(data-text) / "";
+    position: absolute;
+    inset: 0;
     color: var(--color-cacau);
+    clip-path: inset(0 calc((1 - var(--p, 0)) * 100%) 0 0);
   }
+  /* fechamento: maior, em choc, com linha dourada (decorativa) desenhada por último */
   .man-text .last {
     display: block;
+    width: fit-content;
     margin-top: 0.4em;
     font-size: 1.18em;
-    color: color-mix(in srgb, var(--color-cacau) 62%, var(--color-rose));
-    transition: color 0.6s;
   }
-  .man-text .last.on {
+  .man-text .last::after {
     color: var(--color-choc);
+  }
+  .man-text .last::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -0.2em;
+    height: 2px;
+    background: var(--color-gold);
+    transform: scaleX(max(0, min(1, calc((var(--p, 0) - 0.7) / 0.3))));
+    transform-origin: left;
   }
   .man-progress {
     position: absolute;
