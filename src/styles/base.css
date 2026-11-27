@@ -53,6 +53,20 @@
   .on-dark :focus-visible {
     outline-color: var(--color-gold);
   }
+  /* superfícies do navegador na paleta da marca */
+  html {
+    accent-color: var(--color-choc);
+    caret-color: var(--color-choc);
+    scrollbar-color: color-mix(in srgb, var(--color-choc) 45%, transparent) var(--color-leite);
+  }
+  ::selection {
+    background: var(--color-gold-soft);
+    color: var(--color-cacau);
+  }
+  .on-dark ::selection {
+    background: var(--color-gold);
+    color: var(--color-cacau);
+  }
 }
 
 @layer components {
@@ -69,7 +83,7 @@
     background: var(--color-cacau);
     color: var(--color-leite);
     padding: 0.75rem 1rem;
-    border-radius: 8px;
+    border-radius: var(--radius-card);
   }
   .skip:focus {
     top: 1rem;
@@ -142,7 +156,7 @@
   .btn .stick {
     width: 7px;
     height: 16px;
-    border-radius: 4px 4px 2px 2px;
+    border-radius: var(--radius-stick);
     background: currentColor;
     opacity: 0.7;
     position: relative;
@@ -156,7 +170,7 @@
     width: 2px;
     height: 5px;
     background: currentColor;
-    border-radius: 1px;
+    border-radius: var(--radius-hair);
   }
   .btn:hover .stick {
     transform: rotate(-14deg) translateY(-1px);
@@ -255,6 +269,14 @@
     display: grid;
     gap: 0.5rem;
   }
+  .footer ul {
+    gap: 0;
+  }
+  /* alvo de toque ≥ 24px (WCAG 2.5.8) sem mudar o ritmo visual da lista */
+  .footer ul a {
+    display: inline-block;
+    padding-block: 0.25rem;
+  }
   .footer a {
     text-decoration: none;
     color: var(--color-stone);
@@ -326,6 +348,47 @@
   .foot-strip {
     height: 56px;
   }
+  /* faixa de picolés em elementos: inclinam perto do cursor (PopsicleStrip) */
+  .popsicle-strip {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: var(--color-rose-box);
+  }
+  .popsicle-strip i {
+    --tilt: 0deg;
+    flex: none;
+    position: relative;
+    width: 22px;
+    height: 100%;
+    transform: rotate(var(--tilt));
+    transform-origin: 50% 85%;
+    transition: transform var(--duration-fast) var(--ease-vero);
+  }
+  .popsicle-strip i::before,
+  .popsicle-strip i::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    translate: -50% 0;
+    background: var(--color-gold-pattern);
+  }
+  .popsicle-strip i::before {
+    top: 10px;
+    width: 9px;
+    height: 24px;
+    border-radius: var(--radius-pill);
+  }
+  .popsicle-strip i::after {
+    top: 33px;
+    width: 2px;
+    height: 9px;
+    border-radius: var(--radius-hair);
+  }
+  .popsicle-strip i.alt::before,
+  .popsicle-strip i.alt::after {
+    background: color-mix(in srgb, var(--color-leite) 45%, transparent);
+  }
   @media (max-width: 860px) {
     .foot-grid {
       grid-template-columns: 1fr 1fr;
@@ -341,11 +404,32 @@
 
 /* movimento reduzido: transições e animações instantâneas */
 @media (prefers-reduced-motion: reduce) {
-  *,
+  /* corta o movimento em tudo, menos nos feedbacks de envio, que trocam o
+     movimento por fades curtos de opacidade (seguros para quem pede menos movimento) */
+  :not(.form-success, .form-success-seal, .btn-spinner),
   *::before,
   *::after {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
+  }
+  .form-success {
+    animation: rm-fade 0.2s ease-out both;
+  }
+  .form-success-seal {
+    animation: rm-fade 0.2s ease-out 0.1s both;
+  }
+  .btn-spinner {
+    animation: rm-pulse 1s ease-in-out infinite;
+  }
+  @keyframes rm-fade {
+    from {
+      opacity: 0;
+    }
+  }
+  @keyframes rm-pulse {
+    50% {
+      opacity: 0.35;
+    }
   }
 }

@@ -55,6 +55,10 @@
   --radius-arch: 999px 999px 4px 4px;
   --radius-card: 12px;
   --radius-card-lg: 14px;
+  /* silhueta de picolé em miniatura (ícone do botão, pontos dos produtos) */
+  --radius-stick: 4px 4px 2px 2px;
+  --radius-stick-lg: 6px 6px 3px 3px;
+  --radius-hair: 1px;
 
   /* movimento */
   --ease-vero: cubic-bezier(0.22, 0.8, 0.24, 1);
